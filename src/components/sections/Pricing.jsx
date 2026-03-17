@@ -2,49 +2,52 @@ import React from "react";
 import { pricing } from "../../data/config";
 import SectionTitle from "../common/SectionTitle";
 import { Check } from "lucide-react";
+import Button from "../common/Button";
 
 export default function Pricing() {
   return (
-    <section className="py-20 bg-linear-to-br from-blue-50 to-indigo-100">
+    <section className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Harga & Promosi"
-          subtitle="Penawaran terbaik dengan skema pembayaran yang fleksibel"
+          subtitle="Penawaran spesial dengan skema pembayaran yang fleksibel untuk kemudahan Anda"
         />
 
-        {/* Main Price */}
-        <div className="bg-white rounded-lg shadow-lg p-12 mb-12 text-center">
-          <p className="text-gray-600 text-lg mb-2">Harga Mulai Dari</p>
-          <p className="text-5xl font-bold text-blue-600 mb-4">
-            {pricing.startingPrice}
+        {/* Main Price Card */}
+        <div className="bg-black text-white rounded-2xl shadow-lg p-8 mb-12 text-center">
+          <p className="text-gray-300 text-base font-semibold uppercase tracking-wider mb-2">
+            Harga Mulai Dari
           </p>
-          <p className="text-gray-600">DP Minimal: {pricing.minimalDP}</p>
+          <p className="text-5xl font-bold mb-3">{pricing.startingPrice}</p>
+          <p className="text-gray-300 text-base">
+            DP Minimal: {pricing.minimalDP}
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {/* Payment Schemes */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-6">
               Skema Pembayaran
             </h3>
             <div className="space-y-4">
               {pricing.paymentScheme.map((scheme, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-lg p-6 shadow-md border-l-4 border-blue-600 flex justify-between items-center hover:shadow-lg transition-shadow"
+                  className="bg-white rounded-xl p-6 shadow-sm border border-gray-300 hover:shadow-md hover:border-gray-900 transition-smooth"
                 >
-                  <div>
-                    <p className="font-bold text-gray-900 text-lg">
-                      {scheme.type}
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      Diskon hingga {scheme.discount}
-                    </p>
-                  </div>
-                  <div className="text-right">
-                    <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-bold">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <p className="font-bold text-gray-900 text-lg mb-1">
+                        {scheme.type}
+                      </p>
+                      <p className="text-gray-600 text-sm">
+                        Cicilan hingga {scheme.discount}
+                      </p>
+                    </div>
+                    <div className="bg-gray-100 text-gray-900 px-4 py-2 rounded-lg font-bold text-sm">
                       {scheme.discount}
-                    </span>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -53,32 +56,34 @@ export default function Pricing() {
 
           {/* Current Promos */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <h3 className="text-2xl font-bold text-gray-900 mb-8">
               Promosi Saat Ini
             </h3>
-            <div className="bg-white rounded-lg p-8 shadow-lg">
-              <ul className="space-y-4">
+            <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
+              <ul className="space-y-4 mb-8">
                 {pricing.promo.map((promo, index) => (
-                  <li key={index} className="flex gap-4 items-start">
-                    <div className="shrink-0 w-6 h-6 rounded-full bg-green-500 flex items-center justify-center mt-0.5">
+                  <li key={index} className="flex gap-3 items-start">
+                    <div className="shrink-0 w-6 h-6 rounded-full bg-gray-900 flex items-center justify-center mt-0.5 flex-shrink-0">
                       <Check size={16} className="text-white" />
                     </div>
-                    <span className="text-gray-800 font-medium">{promo}</span>
+                    <span className="text-gray-800 font-medium leading-relaxed">
+                      {promo}
+                    </span>
                   </li>
                 ))}
               </ul>
 
-              {/* CTA */}
-              <button className="w-full mt-8 bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition-colors">
+              {/* CTA Button */}
+              <Button variant="primary" size="lg" className="w-full">
                 Hubungi Kami Untuk Promo Menarik
-              </button>
+              </Button>
             </div>
           </div>
         </div>
 
-        {/* Comparison */}
-        <div className="mt-12 bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="bg-gray-100 px-6 py-4">
+        {/* Comparison Table */}
+        <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-slate-200">
+          <div className="bg-gradient-to-r from-gray-50 to-gray-100 px-8 py-6 border-b border-gray-200">
             <h3 className="text-xl font-bold text-gray-900">
               Perbandingan Tipe Rumah
             </h3>
@@ -86,49 +91,55 @@ export default function Pricing() {
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="border-b-2 border-gray-200">
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">
+                <tr className="border-b-2 border-gray-200 bg-gray-50">
+                  <th className="px-6 py-4 text-left font-semibold text-gray-900">
                     Tipe
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">
+                  <th className="px-6 py-4 text-left font-semibold text-gray-900">
                     Luas Tanah
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">
+                  <th className="px-6 py-4 text-left font-semibold text-gray-900">
                     Luas Bangunan
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-gray-900">
+                  <th className="px-6 py-4 text-left font-semibold text-gray-900">
                     Kamar Tidur
                   </th>
-                  <th className="px-6 py-4 text-left font-bold text-blue-600">
+                  <th className="px-6 py-4 text-left font-semibold text-black">
                     Harga
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">Tipe A</td>
-                  <td className="px-6 py-4">60 m²</td>
-                  <td className="px-6 py-4">45 m²</td>
-                  <td className="px-6 py-4">2</td>
-                  <td className="px-6 py-4 font-bold text-blue-600">
+                <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-gray-900">
+                    Tipe A
+                  </td>
+                  <td className="px-6 py-4 text-gray-700">60 m²</td>
+                  <td className="px-6 py-4 text-gray-700">45 m²</td>
+                  <td className="px-6 py-4 text-gray-700">2</td>
+                  <td className="px-6 py-4 font-bold text-black">
                     Rp 395.000.000
                   </td>
                 </tr>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">Tipe B</td>
-                  <td className="px-6 py-4">75 m²</td>
-                  <td className="px-6 py-4">60 m²</td>
-                  <td className="px-6 py-4">3</td>
-                  <td className="px-6 py-4 font-bold text-blue-600">
+                <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-gray-900">
+                    Tipe B
+                  </td>
+                  <td className="px-6 py-4 text-gray-700">75 m²</td>
+                  <td className="px-6 py-4 text-gray-700">60 m²</td>
+                  <td className="px-6 py-4 text-gray-700">3</td>
+                  <td className="px-6 py-4 font-bold text-black">
                     Rp 595.000.000
                   </td>
                 </tr>
-                <tr className="hover:bg-gray-50">
-                  <td className="px-6 py-4 font-semibold">Tipe C</td>
-                  <td className="px-6 py-4">100 m²</td>
-                  <td className="px-6 py-4">85 m²</td>
-                  <td className="px-6 py-4">3</td>
-                  <td className="px-6 py-4 font-bold text-blue-600">
+                <tr className="hover:bg-slate-50 transition-colors">
+                  <td className="px-6 py-4 font-semibold text-gray-900">
+                    Tipe C
+                  </td>
+                  <td className="px-6 py-4 text-gray-700">100 m²</td>
+                  <td className="px-6 py-4 text-gray-700">85 m²</td>
+                  <td className="px-6 py-4 text-gray-700">3</td>
+                  <td className="px-6 py-4 font-bold text-black">
                     Rp 895.000.000
                   </td>
                 </tr>

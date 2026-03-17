@@ -1,8 +1,31 @@
+// Import images
+import logoImg from "../assets/logo.jpeg";
+import typeAImg from "../assets/typeA.jpg";
+import typeAFloorImg from "../assets/denahtype_a.jpg";
+import typeBImg from "../assets/typeb.jpg";
+import typeBFloorImg from "../assets/denahtype_b.jpg";
+import typeCImg from "../assets/typec.jpg";
+import typeCFloorImg from "../assets/denahtype_c.jpg";
+import fasilitasSecurityImg from "../assets/fasilitas_security.jpg";
+import fasilitas0neGateImg from "../assets/fasilitas_onegate.jpg";
+import fasilitas_masjidImg from "../assets/fasilitas_masjid.jpg";
+import fasilitas_tamanImg from "../assets/fasilitas_taman.jpg";
+import fasilitas_joggingtrackImg from "../assets/fasilitas_joggingtrack.jpg";
+import fasilitas_kolamImg from "../assets/fasilitas_kolam.jpg";
+import background1Img from "../assets/backgroud1.jpg";
+import background2Img from "../assets/background2.jpg";
+import galeri1Img from "../assets/galeri1.jpg";
+import galeri2Img from "../assets/galeri2.jpg";
+import galeri3Img from "../assets/galeri3.jpg";
+import galeri4Img from "../assets/galeri4.jpg";
+import typeA1Img from "../assets/typeA1.jpg";
+import typeB1Img from "../assets/typeB1.jpg";
+
 // Company Information
 export const company = {
-  name: "Sky Estate",
-  logo: "🏢",
-  tagline: "Your Dream Home Awaits",
+  name: "Hollan Village",
+  logo: logoImg,
+  tagline: "Rumah Impian Anda Menunggu",
   description:
     "Sky Estate telah menjadi developer terpercaya dalam menciptakan komunitas perumahan berkualitas tinggi dengan standar internasional.",
   yearEstablished: 2015,
@@ -54,10 +77,8 @@ export const houseTypes = [
       "Halaman depan dan belakang",
       "Sistem keamanan terintegrasi",
     ],
-    image:
-      "https://images.unsplash.com/photo-1570129477492-45f003313e78?w=500&h=400&fit=crop",
-    floorPlan:
-      "https://images.unsplash.com/photo-1577720361528-3e1b4ae4b64a?w=500&h=400&fit=crop",
+    image: typeAImg,
+    floorPlan: typeAFloorImg,
   },
   {
     id: 2,
@@ -75,10 +96,8 @@ export const houseTypes = [
       "Halaman yang luas",
       "Smart home technology",
     ],
-    image:
-      "https://images.unsplash.com/photo-1580587771550-e323be2ae537?w=500&h=400&fit=crop",
-    floorPlan:
-      "https://images.unsplash.com/photo-1604328698692-f76ea0fb28b7?w=500&h=400&fit=crop",
+    image: typeBImg,
+    floorPlan: typeBFloorImg,
   },
   {
     id: 3,
@@ -96,10 +115,8 @@ export const houseTypes = [
       "Halaman eksklusif dengan kolam renang mini",
       "Home theater room",
     ],
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=500&h=400&fit=crop",
-    floorPlan:
-      "https://images.unsplash.com/photo-1554995207-c18210cc9bdd?w=500&h=400&fit=crop",
+    image: typeCImg,
+    floorPlan: typeCFloorImg,
   },
 ];
 
@@ -110,48 +127,42 @@ export const facilities = [
     name: "Security 24 Jam",
     description: "Tim keamanan profesional tersedia 24/7 untuk ketenangan Anda",
     icon: "lock",
-    image:
-      "https://images.unsplash.com/photo-1589939705066-5ec98ab564d0?w=300&h=300&fit=crop",
+    image: fasilitasSecurityImg,
   },
   {
     id: 2,
     name: "One Gate System",
     description: "Sistem gerbang terpadu dengan akses terkontrol dan modern",
     icon: "door",
-    image:
-      "https://images.unsplash.com/photo-1547557706-abb221c2e6f5?w=300&h=300&fit=crop",
+    image: fasilitas0neGateImg,
   },
   {
     id: 3,
     name: "Masjid",
     description: "Tempat ibadah yang megah dan nyaman untuk semua penghuni",
     icon: "building",
-    image:
-      "https://images.unsplash.com/photo-1585320806553-5395076ebf08?w=300&h=300&fit=crop",
+    image: fasilitas_masjidImg,
   },
   {
     id: 4,
     name: "Taman Bermain Anak",
     description: "Area bermain yang aman dan dilengkapi peralatan modern",
     icon: "zap",
-    image:
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=300&h=300&fit=crop",
+    image: fasilitas_tamanImg,
   },
   {
     id: 5,
     name: "Jogging Track",
     description: "Jalur jogging sepanjang 2 km dengan pemandangan asri",
     icon: "run",
-    image:
-      "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop",
+    image: fasilitas_joggingtrackImg,
   },
   {
     id: 6,
     name: "Kolam Renang",
     description: "Kolam renang Olympic-size dengan fasilitas lengkap",
     icon: "swim",
-    image:
-      "https://images.unsplash.com/photo-1576610616656-570cc63218b0?w=300&h=300&fit=crop",
+    image: fasilitas_kolamImg,
   },
   {
     id: 7,
@@ -159,16 +170,14 @@ export const facilities = [
     description:
       "Pusat komunitas dengan berbagai fasilitas sosial dan olahraga",
     icon: "building",
-    image:
-      "https://images.unsplash.com/photo-1552391206-a5af3dd0f65f?w=300&h=300&fit=crop",
+    image: background1Img,
   },
   {
     id: 8,
     name: "Area Komersial",
     description: "Pusat perbelanjaan dan layanan bisnis dalam kompleks",
     icon: "shopping",
-    image:
-      "https://images.unsplash.com/photo-1555636222-cae831c7a317?w=300&h=300&fit=crop",
+    image: background2Img,
   },
 ];
 
@@ -224,43 +233,37 @@ export const gallery = [
     id: 1,
     title: "Kawasan Perumahan",
     category: "area",
-    image:
-      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop",
+    image: galeri1Img,
   },
   {
     id: 2,
     title: "Model Rumah Tipe A",
     category: "house",
-    image:
-      "https://images.unsplash.com/photo-1570129477492-45f003313e78?w=600&h=400&fit=crop",
+    image: galeri2Img,
   },
   {
     id: 3,
     title: "Kolam Renang",
     category: "facility",
-    image:
-      "https://images.unsplash.com/photo-1576610616656-570cc63218b0?w=600&h=400&fit=crop",
+    image: galeri3Img,
   },
   {
     id: 4,
     title: "Taman Bermain",
     category: "facility",
-    image:
-      "https://images.unsplash.com/photo-1552820728-8ac41f1ce891?w=600&h=400&fit=crop",
+    image: galeri4Img,
   },
   {
     id: 5,
     title: "Model Rumah Tipe B",
     category: "house",
-    image:
-      "https://images.unsplash.com/photo-1580587771550-e323be2ae537?w=600&h=400&fit=crop",
+    image: typeA1Img,
   },
   {
     id: 6,
     title: "Club House",
     category: "facility",
-    image:
-      "https://images.unsplash.com/photo-1552391206-a5af3dd0f65f?w=600&h=400&fit=crop",
+    image: typeB1Img,
   },
 ];
 
