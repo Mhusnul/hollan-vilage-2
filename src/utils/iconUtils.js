@@ -1,0 +1,104 @@
+import {
+  Car,
+  BookOpen,
+  Hospital,
+  ShoppingBag,
+  Train,
+  Trees,
+  Lock,
+  DoorOpen,
+  Building2,
+  Zap,
+  Activity,
+  Waves,
+  ShoppingCart,
+  Check,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Home,
+  Image,
+  Camera,
+  Star,
+  TrendingUp,
+  Users,
+  DollarSign,
+  Wifi,
+  Shield,
+  Leaf,
+  Users2,
+  MessageSquare,
+  Facebook,
+  Twitter,
+  Instagram,
+  Smartphone,
+  ArrowUp,
+  Menu,
+  X,
+  ChevronUp,
+  Grid3x3,
+  Lightbulb,
+  Award,
+  MapPinned,
+} from "lucide-react";
+
+// Icon mapping untuk keunggulan lokasi
+export const advantageIcons = {
+  car: Car,
+  school: BookOpen,
+  hospital: Hospital,
+  mall: ShoppingBag,
+  train: Train,
+  tree: Trees,
+};
+
+// Icon mapping untuk fasilitas
+export const facilityIcons = {
+  lock: Lock,
+  door: DoorOpen,
+  building: Building2,
+  zap: Zap,
+  run: Activity,
+  swim: Waves,
+  shopping: ShoppingCart,
+  wifi: Wifi,
+};
+
+// Icon mapping untuk aksi/UI & footer
+export const actionIcons = {
+  check: Check,
+  phone: Phone,
+  email: Mail,
+  location: MapPin,
+  clock: Clock,
+  home: Home,
+  image: Image,
+  camera: Camera,
+  star: Star,
+  trending: TrendingUp,
+  users: Users,
+  users2: Users2,
+  dollar: DollarSign,
+  shield: Shield,
+  leaf: Leaf,
+  message: MessageSquare,
+  facebook: Facebook,
+  twitter: Twitter,
+  instagram: Instagram,
+  smartphone: Smartphone,
+  menu: Menu,
+  close: X,
+  up: ChevronUp,
+  scroll: ArrowUp,
+  grid: Grid3x3,
+  lightbulb: Lightbulb,
+  award: Award,
+  mapPinned: MapPinned,
+};
+
+// General icon getter
+export const getIconComponent = (iconName) => {
+  const allIcons = { ...advantageIcons, ...facilityIcons, ...actionIcons };
+  return allIcons[iconName] || null;
+};
