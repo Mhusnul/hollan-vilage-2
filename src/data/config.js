@@ -17,12 +17,6 @@ import fasilitas_joggingtrackImg from "../assets/fasilitas_joggingtrack.jpg";
 import fasilitas_kolamImg from "../assets/fasilitas_kolam.jpg";
 import background1Img from "../assets/backgroud1.jpg";
 import background2Img from "../assets/background2.jpg";
-import galeri1Img from "../assets/galeri1.jpg";
-import galeri2Img from "../assets/galeri2.jpg";
-import galeri3Img from "../assets/galeri3.jpg";
-import galeri4Img from "../assets/galeri4.jpg";
-import typeA1Img from "../assets/typeA1.jpg";
-import typeB1Img from "../assets/typeB1.jpg";
 
 // Company Information
 export const company = {

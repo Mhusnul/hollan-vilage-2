@@ -27,7 +27,7 @@ export default function Header() {
             />
             <div>
               <h1 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
-                {company.name}
+                {company.companyNameShort}
               </h1>
               <p className="text-xs text-gray-600">{company.tagline}</p>
             </div>
@@ -103,9 +103,6 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <button className="w-full mt-4 px-4 py-2 bg-gray-900 hover:bg-gray-800 text-white font-medium rounded-lg transition-smooth">
-              Find A House
-            </button>
           </div>
         )}
       </nav>
