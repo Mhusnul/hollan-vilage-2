@@ -4,97 +4,66 @@ import SectionTitle from "../common/SectionTitle";
 import { getIconComponent } from "../../utils/iconUtils";
 
 export default function Facilities() {
+  const mainFacilities = facilities.slice(0, 3);
+  const otherFacilities = facilities.slice(3);
+
   return (
-    <section id="facilities" className="py-12 bg-white">
+    <section id="facilities" className="py-4 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          title="Fasilitas Lengkap"
-          subtitle="Kami menyediakan semua fasilitas yang Anda butuhkan untuk kenyamanan dan kesejahteraan hidup"
+          title="Fasilitas"
+          subtitle="Dirancang untuk kenyamanan, keamanan, dan kualitas hidup terbaik"
         />
+        {/* SECONDARY LIST (MINIMAL) */}
+        <div className="mt-5">
+          <div className="flex flex-wrap justify-center gap-3">
+            {otherFacilities.map((facility) => {
+              const Icon = getIconComponent(facility.icon);
 
-        {/* Facilities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-          {facilities.map((facility) => {
-            const IconComponent = getIconComponent(facility.icon);
+              return (
+                <div
+                  key={facility.id}
+                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:bg-gray-100 transition"
+                >
+                  {Icon && <Icon size={16} />}
+                  {facility.name}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+        {/* MAIN HIGHLIGHT (BIG IMAGE) */}
+        <div className="grid lg:grid-cols-3 gap-6 mt-16">
+          {mainFacilities.map((facility) => {
+            const Icon = getIconComponent(facility.icon);
+
             return (
               <div
                 key={facility.id}
-                className="group bg-white border border-gray-300 rounded-xl overflow-hidden hover:shadow-lg hover:border-gray-900 transition-smooth"
+                className="relative group rounded-2xl overflow-hidden h-[300px]"
               >
-                {/* Image Section */}
-                <div className="h-40 bg-gradient-to-br from-slate-100 to-slate-50 flex items-center justify-center overflow-hidden relative">
-                  <img
-                    src={facility.image}
-                    alt={facility.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-smooth"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent group-hover:from-black/40 transition-smooth" />
-                </div>
+                <img
+                  src={facility.image}
+                  alt={facility.name}
+                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                />
 
-                {/* Content Section */}
-                <div className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-gray-100">
-                      {IconComponent && (
-                        <IconComponent size={20} className="text-black" />
-                      )}
-                    </div>
-                    <h3 className="text-base font-semibold text-gray-900 group-hover:text-black transition-colors">
-                      {facility.name}
-                    </h3>
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition" />
+
+                {/* Content */}
+                <div className="absolute bottom-0 p-6 text-white">
+                  <div className="flex items-center gap-3 mb-2">
+                    {Icon && <Icon size={20} />}
+                    <h3 className="text-lg font-semibold">{facility.name}</h3>
                   </div>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-200 line-clamp-2">
                     {facility.description}
                   </p>
                 </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Highlights Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {/* Security */}
-          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-smooth">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-              <span className="text-2xl">🔒</span>
-            </div>
-            <h4 className="text-base font-bold text-gray-900 mb-2">
-              Keamanan Terbaik
-            </h4>
-            <p className="text-gray-700 leading-relaxed text-sm">
-              Tim security profesional bertugas 24/7 menjaga keamanan dan
-              kenyamanan seluruh penghuni dengan teknologi terkini
-            </p>
-          </div>
-
-          {/* Green Space */}
-          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-smooth">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-              <span className="text-2xl">🌳</span>
-            </div>
-            <h4 className="text-base font-bold text-gray-900 mb-2">
-              Lingkungan Hijau
-            </h4>
-            <p className="text-gray-700 leading-relaxed text-sm">
-              Area hijau yang luas dengan taman-taman indah untuk kesehatan,
-              relaksasi, dan keseimbangan hidup
-            </p>
-          </div>
-
-          {/* Community */}
-          <div className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-smooth">
-            <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-3">
-              <span className="text-2xl">👥</span>
-            </div>
-            <h4 className="text-base font-bold text-gray-900 mb-2">
-              Komunitas Aktif
-            </h4>
-            <p className="text-gray-700 leading-relaxed text-sm">
-              Berbagai kegiatan komunitas dan acara sosial untuk membangun
-              hubungan yang harmonis antar penghuni
-            </p>
-          </div>
         </div>
       </div>
     </section>

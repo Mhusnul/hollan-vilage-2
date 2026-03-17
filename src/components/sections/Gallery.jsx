@@ -6,11 +6,12 @@ import { X } from "lucide-react";
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState("all");
+  const [showMore, setShowMore] = useState(false);
 
   const categories = [
     { value: "all", label: "Semua" },
-    { value: "area", label: "Kawasan" },
-    { value: "house", label: "Rumah" },
+    { value: "house", label: "Tipe Rumah" },
+    { value: "floorplan", label: "Denah" },
     { value: "facility", label: "Fasilitas" },
   ];
 
@@ -18,6 +19,12 @@ export default function Gallery() {
     filter === "all"
       ? gallery
       : gallery.filter((item) => item.category === filter);
+
+  // Show only 6 items for "all" filter, show all for other filters
+  const displayedGallery =
+    filter === "all" && !showMore
+      ? filteredGallery.slice(0, 6)
+      : filteredGallery;
 
   return (
     <section id="gallery" className="py-12 bg-white">
@@ -32,7 +39,10 @@ export default function Gallery() {
           {categories.map((cat) => (
             <button
               key={cat.value}
-              onClick={() => setFilter(cat.value)}
+              onClick={() => {
+                setFilter(cat.value);
+                setShowMore(false);
+              }}
               className={`px-6 py-2 rounded-full font-semibold transition-smooth ${
                 filter === cat.value
                   ? "bg-black text-white shadow-md"
@@ -46,7 +56,7 @@ export default function Gallery() {
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
-          {filteredGallery.map((item) => (
+          {displayedGallery.map((item) => (
             <div
               key={item.id}
               className="group relative h-64 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-smooth cursor-pointer border border-gray-300"
@@ -64,6 +74,18 @@ export default function Gallery() {
             </div>
           ))}
         </div>
+
+        {/* View More Button */}
+        {filter === "all" && filteredGallery.length > 6 && !showMore && (
+          <div className="text-center mb-8">
+            <button
+              onClick={() => setShowMore(true)}
+              className="px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-smooth"
+            >
+              Lihat Lebih Banyak
+            </button>
+          </div>
+        )}
 
         {/* Empty State */}
         {filteredGallery.length === 0 && (

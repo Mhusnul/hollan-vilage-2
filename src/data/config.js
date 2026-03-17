@@ -1,11 +1,14 @@
 // Import images
 import logoImg from "../assets/logo.jpeg";
-import typeAImg from "../assets/typeA.jpg";
-import typeAFloorImg from "../assets/denahtype_a.jpg";
-import typeBImg from "../assets/typeb.jpg";
-import typeBFloorImg from "../assets/denahtype_b.jpg";
-import typeCImg from "../assets/typec.jpg";
-import typeCFloorImg from "../assets/denahtype_c.jpg";
+import type6096Img from "../assets/type-60-96.png";
+import type4572Img from "../assets/type-45-72.png";
+import type3672Img from "../assets/type-36-72.png";
+import type60Img from "../assets/type60.png";
+import type45Img from "../assets/type45.png";
+import type36Img from "../assets/type36.png";
+import denah6096Img from "../assets/denah-type-60-96.png";
+import denah4572Img from "../assets/denah-type-45-75.png";
+import denah3672Img from "../assets/denah-type-36-72.png";
 import fasilitasSecurityImg from "../assets/fasilitas_security.jpg";
 import fasilitas0neGateImg from "../assets/fasilitas_onegate.jpg";
 import fasilitas_masjidImg from "../assets/fasilitas_masjid.jpg";
@@ -23,16 +26,17 @@ import typeB1Img from "../assets/typeB1.jpg";
 
 // Company Information
 export const company = {
-  name: "Hollan Village",
+  name: "PT. PUSPA AGRA PROPERTI",
+  companyNameShort: "Hollan Village",
   logo: logoImg,
-  tagline: "Rumah Impian Anda Menunggu",
+  tagline: "Impian Anda Menjadi Kenyataan",
   description:
-    "Sky Estate telah menjadi developer terpercaya dalam menciptakan komunitas perumahan berkualitas tinggi dengan standar internasional.",
-  yearEstablished: 2015,
+    "Hollan Village adalah developer perumahan terpercaya yang menghadirkan hunian berkualitas dengan harga terjangkau dan lokasi strategi di Kota Sukabumi.",
+  yearEstablished: 2025,
   vision:
-    "Menjadi developer properti terdepan yang menghadirkan hunian berkualitas dengan harga terjangkau.",
+    "Menjadi developer properti terdepan di Sukabumi yang menghadirkan hunian berkualitas dengan harga terjangkau.",
   mission: [
-    "Menyediakan properti berkualitas dengan standar internasional",
+    "Menyediakan properti berkualitas dengan standar modern",
     "Memberikan nilai terbaik kepada pelanggan",
     "Membangun komunitas yang sehat dan harmonis",
     "Komitmen pada keberlanjutan lingkungan",
@@ -41,21 +45,24 @@ export const company = {
 
 // Housing Project Information
 export const project = {
-  name: "Holland Village",
-  location: "Jl. Raya Sudirman, Depok, Jawa Barat",
-  fullAddress: "Jl. Raya Sudirman No. 123, Depok, Jawa Barat 16424, Indonesia",
-  areaSize: "45 Hektar",
+  name: "Holland Village Sukabumi",
+  location:
+    "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
+  fullAddress:
+    "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
+  areaSize: "Strategi Lokasi",
   totalUnits: 850,
   status: "On Progress", // Pre-launch, On Progress, Ready Stock
   description:
-    "Holland Village adalah perumahan modern yang dirancang untuk memenuhi kebutuhan keluarga modern dengan fasilitas lengkap dan lokasi strategis. Setiap detail desain telah dipikirkan dengan matang untuk menciptakan lingkungan hunian yang nyaman dan berkelanjutan.",
-  googleMapsLink: "https://maps.google.com/?q=Holland+Village+Depok",
+    "Holland Village Sukabumi adalah perumahan modern yang dirancang untuk memenuhi kebutuhan keluarga modern dengan fasilitas lengkap dan lokasi strategis. Setiap detail desain telah dipikirkan dengan matang untuk menciptakan lingkungan hunian yang nyaman dan berkelanjutan.",
+  googleMapsLink: "https://maps.google.com/?q=Holland+Village+Sukabumi",
   landmarks: [
-    { name: "Stasiun Depok", distance: "2 km" },
-    { name: "Tol Jagorawi", distance: "1.5 km" },
-    { name: "Mall Depok", distance: "3 km" },
-    { name: "RSAD Gatot Subroto", distance: "4 km" },
-    { name: "SMA Negeri 1 Depok", distance: "1 km" },
+    { name: "Indo Grosir", distance: "10 menit" },
+    { name: "Rumah Sakit", distance: "3 menit" },
+    { name: "Kampus IPB Sukabumi", distance: "5 menit" },
+    { name: "Terminal Bis", distance: "5 menit" },
+    { name: "Rencana Exit Tol Bocimi", distance: "3 km" },
+    { name: "Akses Jalur Provinsi", distance: "Dekat" },
   ],
 };
 
@@ -63,60 +70,121 @@ export const project = {
 export const houseTypes = [
   {
     id: 1,
-    name: "Tipe A",
+    name: "Type 60/116",
     landArea: "60 m²",
-    buildingArea: "45 m²",
+    buildingArea: "116 m²",
     bedroom: 2,
-    bathroom: 1,
-    floor: 1,
-    priceStartFrom: "Rp 395.000.000",
+    floor: 2,
+    priceStartFrom: "Rp 759.000.000",
+    dpAmount: "Rp 75.900.000",
+    kprAmount: "Rp 673.100.000",
+    roomDetails: "2 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
     specification: [
-      "Desain modern minimalis",
-      "Dapur semi terbuka",
-      "Garasi 1 mobil",
+      "Desain modern 2 lantai",
+      "Dapur semi terbuka dengan fungsi optimal",
+      "Garasi 1 mobil dengan carport",
+      "Carport: Grass Block",
       "Halaman depan dan belakang",
-      "Sistem keamanan terintegrasi",
+      "Pondasi: Tapak - Cakar Ayam",
+      "Struktur: Beton Bertulang",
+      "Dinding: Bata Ringan, Plester & Cat",
+      "Atap: Genteng Keramik/Karmuri Flat",
+      "Plafon: Gypsum, GRC/Hollow",
+      "Lantai: Granit 60x60",
+      "Listrik: 1300 Watt",
     ],
-    image: typeAImg,
-    floorPlan: typeAFloorImg,
+    image: type6096Img,
+    floorPlan: denah6096Img,
   },
   {
     id: 2,
-    name: "Tipe B",
-    landArea: "75 m²",
-    buildingArea: "60 m²",
-    bedroom: 3,
-    bathroom: 2,
+    name: "Type 60/96",
+    landArea: "60 m²",
+    buildingArea: "96 m²",
+    bedroom: 2,
     floor: 2,
-    priceStartFrom: "Rp 595.000.000",
+    priceStartFrom: "Rp 659.000.000",
+    dpAmount: "Rp 65.900.000",
+    kprAmount: "Rp 588.100.000",
+    roomDetails: "2 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
     specification: [
-      "Desain modern dengan interior premium",
-      "Dapur terbuka dengan island",
-      "Garasi 2 mobil",
-      "Halaman yang luas",
-      "Smart home technology",
+      "Desain modern minimalis 2 lantai",
+      "Dapur semi terbuka yang fungsional",
+      "Garasi 1 mobil dengan carport grass block",
+      "Halaman yang cukup untuk kebutuhan keluarga",
+      "Pondasi: Tapak - Cakar Ayam",
+      "Struktur: Beton Bertulang",
+      "Dinding: Bata Ringan, Plester & Cat",
+      "Kusen: Alumunium & Kayu",
+      "Atap: Genteng Keramik/Karmuri Flat",
+      "Rangka Atap: Baja Ringan",
+      "Lantai: Granit 60x60",
+      "Listrik: 1300 Watt",
     ],
-    image: typeBImg,
-    floorPlan: typeBFloorImg,
+    image: type6096Img,
+    floorPlan: denah6096Img,
   },
   {
     id: 3,
-    name: "Tipe C",
-    landArea: "100 m²",
-    buildingArea: "85 m²",
-    bedroom: 3,
-    bathroom: 3,
+    name: "Type 45/72",
+    landArea: "45 m²",
+    buildingArea: "72 m²",
+    bedroom: 2,
     floor: 2,
-    priceStartFrom: "Rp 895.000.000",
+    priceStartFrom: "Rp 489.000.000",
+    dpAmount: "Rp 48.900.000",
+    kprAmount: "Rp 436.600.000",
+    roomDetails: "2 Kamar Tidur, 1 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
     specification: [
-      "Desain mewah dengan finishing premium",
-      "Dapur terbuka full equipped",
-      "Garasi 2 mobil dengan carport",
-      "Halaman eksklusif dengan kolam renang mini",
-      "Home theater room",
+      "Desain modern kompak 2 lantai",
+      "Dapur semi terbuka dengan layout efisien",
+      "Garasi 1 mobil dengan carport grass block",
+      "Halaman yang optimal untuk ruang terbuka",
+      "Pondasi: Tapak - Cakar Ayam",
+      "Struktur: Beton Bertulang",
+      "Dinding: Bata Ringan, Plester & Cat",
+      "Kusen: Alumunium & Kayu",
+      "Atap: Genteng Keramik/Karmuri Flat",
+      "Plafon: Gypsum, GRC/Hollow",
+      "Lantai: Granit 60x60",
+      "Closet: Duduk",
+      "Air Bersih: Sumur Bor",
+      "Listrik: 1300 Watt",
     ],
-    image: typeCImg,
-    floorPlan: typeCFloorImg,
+    image: type4572Img,
+    floorPlan: denah4572Img,
+  },
+  {
+    id: 4,
+    name: "Type 36/72",
+    landArea: "36 m²",
+    buildingArea: "72 m²",
+    bedroom: 2,
+    floor: 2,
+    priceStartFrom: "Rp 419.000.000",
+    dpAmount: "Rp 41.900.000",
+    kprAmount: "Rp 374.600.000",
+    roomDetails: "2 Kamar Tidur, 1 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
+    specification: [
+      "Desain modern compact tipe terkecil",
+      "Dapur compact dengan fungsi lengkap",
+      "Garasi 1 mobil dengan carport grass block",
+      "Ruang yang sangat efisien untuk penghuni",
+      "Pondasi: Tapak - Cakar Ayam",
+      "Struktur: Beton Bertulang",
+      "Dinding: Bata Ringan, Plester & Cat",
+      "Kusen: Alumunium & Kayu",
+      "Atap: Genteng Keramik/Karmuri Flat",
+      "Rangka Atap: Baja Ringan",
+      "Lantai Umum: Granit 60x60",
+      "Lantai Kamar Mandi: Keramik",
+      "Dapur: Zinc Stainles Steel",
+      "Closet: Duduk",
+      "Air Bersih: Sumur Bor",
+      "Listrik: 1300 Watt",
+    ],
+    image: type3672Img,
+    floorPlan: denah3672Img,
   },
 ];
 
@@ -185,124 +253,211 @@ export const facilities = [
 export const advantages = [
   {
     id: 1,
-    title: "Dekat Dengan Tol Jagorawi",
-    description: "Hanya 1.5 km dari Tol Jagorawi, akses mudah ke Jakarta",
-    distance: "1.5 km",
+    title: "Dekat Indo Grosir",
+    description: "Hanya 10 menit dari Indo Grosir untuk kebutuhan belanja Anda",
+    distance: "10 menit",
     icon: "car",
   },
   {
     id: 2,
-    title: "Proximity ke Sekolah",
-    description: "Dekat dengan SMA & SMP negeri serta sekolah internasional",
-    distance: "1 km",
-    icon: "school",
-  },
-  {
-    id: 3,
     title: "Dekat Rumah Sakit",
-    description: "RSAD Gatot Subroto dan rumah sakit swasta terkemuka",
-    distance: "4 km",
+    description: "Fasilitas kesehatan terlengkap hanya 3 menit perjalanan",
+    distance: "3 menit",
     icon: "hospital",
   },
   {
+    id: 3,
+    title: "Dekat Kampus IPB Sukabumi",
+    description: "Lokasi ideal untuk mahasiswa dengan jarak 5 menit",
+    distance: "5 menit",
+    icon: "school",
+  },
+  {
     id: 4,
-    title: "Dekat Mall & Pusat Perbelanjaan",
-    description: "Mall Depok dan berbagai pusat perbelanjaan modern",
-    distance: "3 km",
-    icon: "mall",
+    title: "Akses Terminal Bis",
+    description: "Transportasi umum mudah diakses 5 menit dari lokasi",
+    distance: "5 menit",
+    icon: "bus",
   },
   {
     id: 5,
-    title: "Akses Stasiun KRL",
-    description: "Stasiun Depok untuk transportasi massal yang nyaman",
-    distance: "2 km",
-    icon: "train",
+    title: "Rencana Exit Tol Bocimi",
+    description: "Akses ke jaringan tol berkembang pesat",
+    distance: "3 km",
+    icon: "car",
   },
   {
     id: 6,
-    title: "Lingkungan Asri & Tenang",
-    description: "Area hijau yang luas dengan tata ruang yang terencana baik",
-    distance: "Dalam kompleks",
-    icon: "tree",
+    title: "Akses Jalur Provinsi",
+    description: "Jalan pemerintah terbaik dengan akses mudah ke area lain",
+    distance: "Strategis",
+    icon: "map",
   },
 ];
+
+// Building Specifications / Material Info
+export const buildingSpecifications = {
+  foundation: "Tapak - Cakar Ayam",
+  structure: "Beton Bertulang",
+  walls: "Bata Ringan, Plester & Cat",
+  carport: "Grass Block",
+  frame: "Alumunium & Kayu",
+  roof: "Genteng Keramik/Karmuri Flat",
+  roofFrame: "Baja Ringan",
+  ceiling: "Gypsum, GRC/Hollow",
+  flooring: "Granit 60x60",
+  bathroomFlooring: "Keramik",
+  kitchenCounter: "Zinc Stainles Steel",
+  closet: "Duduk",
+  waterSupply: "Sumur Bor",
+  electricity: "1300 Watt",
+};
 
 // Gallery Images
 export const gallery = [
   {
     id: 1,
-    title: "Kawasan Perumahan",
-    category: "area",
-    image: galeri1Img,
+    title: "Type 60/96",
+    category: "house",
+    image: type60Img,
   },
   {
     id: 2,
-    title: "Model Rumah Tipe A",
+    title: "Type 45/72",
     category: "house",
-    image: galeri2Img,
+    image: type45Img,
   },
   {
     id: 3,
-    title: "Kolam Renang",
-    category: "facility",
-    image: galeri3Img,
+    title: "Type 36/72",
+    category: "house",
+    image: type36Img,
   },
   {
     id: 4,
-    title: "Taman Bermain",
-    category: "facility",
-    image: galeri4Img,
+    title: "Denah Type 60/96",
+    category: "floorplan",
+    image: denah6096Img,
   },
   {
     id: 5,
-    title: "Model Rumah Tipe B",
-    category: "house",
-    image: typeA1Img,
+    title: "Denah Type 45/72",
+    category: "floorplan",
+    image: denah4572Img,
   },
   {
     id: 6,
-    title: "Club House",
+    title: "Denah Type 36/72",
+    category: "floorplan",
+    image: denah3672Img,
+  },
+  {
+    id: 7,
+    title: "One Gate System",
     category: "facility",
-    image: typeB1Img,
+    image: fasilitas0neGateImg,
+  },
+  {
+    id: 8,
+    title: "Security 24 Jam",
+    category: "facility",
+    image: fasilitasSecurityImg,
+  },
+  {
+    id: 9,
+    title: "Masjid",
+    category: "facility",
+    image: fasilitas_masjidImg,
   },
 ];
 
 // Pricing & Promo
 export const pricing = {
-  startingPrice: "Rp 395.000.000",
+  startingPrice: "Rp 419.000.000",
   paymentScheme: [
-    { type: "Cash", discount: "5%" },
-    { type: "KPR", discount: "0%" },
-    { type: "Inhouse Financing", discount: "2%" },
+    {
+      type: "Cash",
+      discount: "Perpanjang Booking",
+      description: "Max 1 bulan setelah booking",
+    },
+    {
+      type: "KPR",
+      discount: "Suku bunga 5.99% Fixed 1 Tahun",
+      description: "Approval hingga senilai harga property",
+    },
+    {
+      type: "Transfer",
+      description: "Bank BTN - 000-000-000-000-000-000 PT. PUSPA AGRA PROPERTI",
+    },
   ],
+  bookingFee: {
+    "Type 60/96": "Rp 2.500.000",
+    "Type 60/116": "Rp 2.500.000",
+    "Type 36/72": "Rp 1.000.000",
+    "Type 45/72": "Rp 1.000.000",
+  },
+  allInPrice: {
+    "Type 60/116": "Rp 10.000.000",
+    "Type 60/96": "Rp 5.000.000",
+    "Type 45/72": "Rp 3.500.000",
+    "Type 36/72": "Rp 2.500.000",
+  },
   promo: [
-    "Diskon 5% untuk pembayaran tunai",
-    "Gratis biaya administrasi untuk 100 pembeli pertama",
-    "Free furniture untuk tipe B dan C",
-    "DP ringan mulai dari 10%",
+    "FREE BIAYA BPHTB",
+    "FREE BIAYA AJBB",
+    "FREE BIAYA KPR",
+    "DP ringan mulai dari Rp 41.900.000",
+    "Booking Fee akan dianggap hangus jika pembatalan sepihak dari konsumen",
   ],
-  minimalDP: "10%",
+  persyaratanKaryawan: [
+    "KTP",
+    "Kartu Keluarga",
+    "Buku Nikah",
+    "NPWP",
+    "Buku Nikah (jika diperlukan)",
+    "SK Kartap",
+    "SK Aktif Bekerja",
+    "Rekap Keuangan 6 bulan",
+    "Slip Gaji 3 bulan terakhir",
+    "Rek Payroll 3 bulan terakhir",
+    "SIUP (jika diperlukan)",
+    "Rek Koran 6 bulan",
+  ],
+  cashKeras:
+    "Pembayaran dilakukan 1 kali, maksimal 1 bulan setelah booking. Harga dapat dinegosiasiakan.",
+  cashBertahap:
+    "Tersedia pilihan cicilan selama 6 bulan atau 12 bulan (plus cashback)",
+  warningPembatalan:
+    "Jika ada pembatalan oleh konsumen saat proses Bank atau SPPK sudah diterbitkan, maka akan dikenakan penalti sebesar 50% dari DP yang sudah dibayarkan ke Developer",
 };
 
 // Marketing Contact
 export const marketing = {
-  name: "Budi Santoso",
-  phone: "+62 812-3456-7890",
-  email: "info@skyestate.com",
-  officeAddress: "Jl. Gatot Subroto No. 45, Jakarta 12930",
-  operationalHours: "Senin - Jumat: 09:00 - 18:00 | Sabtu: 09:00 - 16:00",
+  name: "Holland Village Sukabumi",
+  phone: "+62 858-0000-5300",
+  email: "info@hollandvillage.id",
+  officeAddress:
+    "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
+  operationalHours: "Setiap Hari",
+  website: "www.hollandvillage.id",
+  instagram: "@hollandvillagesukabumi",
   agents: [
     {
       id: 1,
-      name: "Agen A",
-      phone: "+62 812-1111-1111",
-      whatsapp: "https://wa.me/6281211111111",
+      name: "Rudi Wahyu P",
+      phone: "+62 858-0000-5300",
+      whatsapp: "https://wa.me/6285800005300",
     },
     {
       id: 2,
-      name: "Agen B",
-      phone: "+62 812-2222-2222",
-      whatsapp: "https://wa.me/6281222222222",
+      name: "Fitri Ramadhani",
+      phone: "+62 812-2063-3161",
+      whatsapp: "https://wa.me/6281220633161",
     },
   ],
+  bankTransfer: {
+    bank: "Bank BTN",
+    accountNumber: "000-000-000-000-000-000",
+    accountName: "PT. PUSPA AGRA PROPERTI",
+  },
 };

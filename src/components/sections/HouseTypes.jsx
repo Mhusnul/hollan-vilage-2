@@ -1,190 +1,114 @@
 import React, { useState } from "react";
 import { houseTypes } from "../../data/config";
+import { BedDouble, Home, Ruler } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
-import Card from "../common/Card";
-import Button from "../common/Button";
 
 export default function HouseTypes() {
-  const [selectedType, setSelectedType] = useState(null);
+  const [activeType, setActiveType] = useState(houseTypes[0]);
 
   return (
-    <section id="houses" className="py-12 bg-white">
+    <section id="houses" className="py-4 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          title="Tipe Rumah Pilihan"
-          subtitle="Berbagai pilihan tipe rumah dengan desain modern untuk setiap kebutuhan dan budget Anda"
+          title="Tipe Rumah"
+          subtitle="Pilih tipe rumah yang sesuai dengan kebutuhan dan gaya hidup Anda"
         />
 
-        {/* House Type Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-          {houseTypes.map((house) => (
-            <Card
-              key={house.id}
-              image={house.image}
-              title={house.name}
-              price={house.priceStartFrom}
-              specs={[
-                `Tanah: ${house.landArea}`,
-                `Bangunan: ${house.buildingArea}`,
-                `${house.bedroom} Kamar Tidur`,
-                `${house.bathroom} Kamar Mandi`,
-              ]}
-              onDetailsClick={() => setSelectedType(house)}
-            />
+        {/* TYPE SELECTOR */}
+        <div className="flex flex-wrap justify-center gap-3 mt-10 mb-16">
+          {houseTypes.map((type) => (
+            <button
+              key={type.id}
+              onClick={() => setActiveType(type)}
+              className={`px-5 py-2 rounded-full text-sm font-medium transition ${
+                activeType.id === type.id
+                  ? "bg-black text-white"
+                  : "bg-white border border-gray-200 text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {type.name}
+            </button>
           ))}
         </div>
 
-        {/* Detail Modal */}
-        {selectedType && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 backdrop-blur-sm animate-fade-in">
-            <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-              {/* Header */}
-              <div className="sticky top-0 flex justify-between items-center p-6 border-b border-gray-200 bg-white rounded-t-2xl">
-                <div>
-                  <h3 className="text-3xl font-bold text-gray-900">
-                    {selectedType.name}
-                  </h3>
-                  <p className="text-gray-600 mt-1">
-                    Mulai dari {selectedType.priceStartFrom}
-                  </p>
-                </div>
-                <button
-                  onClick={() => setSelectedType(null)}
-                  className="w-10 h-10 rounded-full hover:bg-slate-100 flex items-center justify-center transition-smooth"
-                  aria-label="Close"
-                >
-                  <svg
-                    className="w-6 h-6 text-gray-600"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
+        {/* MAIN DISPLAY */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* IMAGE */}
+          <div className="space-y-4">
+            <div className="rounded-2xl overflow-hidden shadow-xl">
+              <img
+                src={activeType.image}
+                alt={activeType.name}
+                className="w-full h-[400px] object-cover"
+              />
+            </div>
 
-              {/* Content */}
-              <div className="p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-                  {/* Left: Details */}
-                  <div className="space-y-8">
-                    {/* Price */}
-                    <div className="bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6">
-                      <p className="text-gray-700 text-sm font-semibold uppercase tracking-wider mb-2">
-                        Harga Mulai Dari
-                      </p>
-                      <p className="text-4xl font-bold text-black">
-                        {selectedType.priceStartFrom}
-                      </p>
-                    </div>
-
-                    {/* Specs Grid */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-slate-50 rounded-lg p-4">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wider mb-2">
-                          Luas Tanah
-                        </p>
-                        <p className="text-2xl font-bold text-gray-900">
-                          {selectedType.landArea}
-                        </p>
-                      </div>
-                      <div className="bg-slate-50 rounded-lg p-4">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wider mb-2">
-                          Luas Bangunan
-                        </p>
-                        <p className="text-2xl font-bold text-gray-900">
-                          {selectedType.buildingArea}
-                        </p>
-                      </div>
-                      <div className="bg-slate-50 rounded-lg p-4">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wider mb-2">
-                          Kamar Tidur
-                        </p>
-                        <p className="text-2xl font-bold text-gray-900">
-                          {selectedType.bedroom}
-                        </p>
-                      </div>
-                      <div className="bg-slate-50 rounded-lg p-4">
-                        <p className="text-gray-600 text-xs font-semibold uppercase tracking-wider mb-2">
-                          Kamar Mandi
-                        </p>
-                        <p className="text-2xl font-bold text-gray-900">
-                          {selectedType.bathroom}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Specifications */}
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-4">
-                        Spesifikasi
-                      </h4>
-                      <ul className="space-y-3">
-                        {selectedType.specification.map((spec, index) => (
-                          <li key={index} className="flex gap-3 text-gray-700">
-                            <span className="text-black font-bold mt-0.5">
-                              ✓
-                            </span>
-                            <span className="leading-relaxed">{spec}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  {/* Right: Images */}
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-sm font-semibold text-gray-600 mb-3">
-                        Foto Unit
-                      </p>
-                      <div className="rounded-xl overflow-hidden h-64 shadow-md">
-                        <img
-                          src={selectedType.image}
-                          alt={selectedType.name}
-                          className="w-full h-full object-cover hover:scale-105 transition-smooth"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-gray-600 mb-3">
-                        Denah Lantai
-                      </p>
-                      <div className="rounded-xl overflow-hidden h-64 shadow-md bg-slate-100">
-                        <img
-                          src={selectedType.floorPlan}
-                          alt="Floor Plan"
-                          className="w-full h-full object-cover hover:scale-105 transition-smooth"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Footer */}
-              <div className="sticky bottom-0 flex gap-3 p-6 border-t border-slate-200 bg-white rounded-b-2xl">
-                <Button
-                  onClick={() => setSelectedType(null)}
-                  variant="secondary"
-                  size="lg"
-                  className="flex-1"
-                >
-                  Tutup
-                </Button>
-                <Button variant="primary" size="lg" className="flex-1">
-                  Hubungi Agen
-                </Button>
-              </div>
+            <div className="rounded-2xl overflow-hidden border bg-white">
+              <img
+                src={activeType.floorPlan}
+                alt="Denah"
+                className="w-full h-[200px] object-cover"
+              />
             </div>
           </div>
-        )}
+
+          {/* DETAILS */}
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              {activeType.name}
+            </h3>
+
+            <p className="text-2xl font-semibold text-black mb-6">
+              Mulai dari {activeType.priceStartFrom}
+            </p>
+
+            {/* SPECS */}
+            <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="flex flex-col items-center bg-white p-4 rounded-xl border">
+                <Home size={20} />
+                <p className="text-sm mt-2 text-gray-500">Tanah</p>
+                <p className="font-semibold">{activeType.landArea}</p>
+              </div>
+
+              <div className="flex flex-col items-center bg-white p-4 rounded-xl border">
+                <Ruler size={20} />
+                <p className="text-sm mt-2 text-gray-500">Bangunan</p>
+                <p className="font-semibold">{activeType.buildingArea}</p>
+              </div>
+
+              <div className="flex flex-col items-center bg-white p-4 rounded-xl border">
+                <BedDouble size={20} />
+                <p className="text-sm mt-2 text-gray-500">Kamar</p>
+                <p className="font-semibold">{activeType.bedroom}</p>
+              </div>
+            </div>
+
+            {/* DESCRIPTION / SPECS */}
+            <div className="mb-8">
+              <h4 className="text-lg font-semibold mb-3">Spesifikasi</h4>
+
+              <ul className="space-y-2">
+                {activeType.specification.map((spec, i) => (
+                  <li key={i} className="text-gray-600 flex gap-2">
+                    <span>•</span>
+                    <span>{spec}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* CTA */}
+            <div className="flex gap-4">
+              <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800">
+                Hubungi Agen
+              </button>
+
+              <button className="px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-100">
+                Jadwalkan Survey
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

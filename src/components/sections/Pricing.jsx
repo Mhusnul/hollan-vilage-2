@@ -1,5 +1,5 @@
 import React from "react";
-import { pricing } from "../../data/config";
+import { pricing, houseTypes } from "../../data/config";
 import SectionTitle from "../common/SectionTitle";
 import { Check } from "lucide-react";
 import Button from "../common/Button";
@@ -110,39 +110,26 @@ export default function Pricing() {
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-gray-900">
-                    Tipe A
-                  </td>
-                  <td className="px-6 py-4 text-gray-700">60 m²</td>
-                  <td className="px-6 py-4 text-gray-700">45 m²</td>
-                  <td className="px-6 py-4 text-gray-700">2</td>
-                  <td className="px-6 py-4 font-bold text-black">
-                    Rp 395.000.000
-                  </td>
-                </tr>
-                <tr className="border-b border-slate-200 hover:bg-slate-50 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-gray-900">
-                    Tipe B
-                  </td>
-                  <td className="px-6 py-4 text-gray-700">75 m²</td>
-                  <td className="px-6 py-4 text-gray-700">60 m²</td>
-                  <td className="px-6 py-4 text-gray-700">3</td>
-                  <td className="px-6 py-4 font-bold text-black">
-                    Rp 595.000.000
-                  </td>
-                </tr>
-                <tr className="hover:bg-slate-50 transition-colors">
-                  <td className="px-6 py-4 font-semibold text-gray-900">
-                    Tipe C
-                  </td>
-                  <td className="px-6 py-4 text-gray-700">100 m²</td>
-                  <td className="px-6 py-4 text-gray-700">85 m²</td>
-                  <td className="px-6 py-4 text-gray-700">3</td>
-                  <td className="px-6 py-4 font-bold text-black">
-                    Rp 895.000.000
-                  </td>
-                </tr>
+                {houseTypes.map((house) => (
+                  <tr
+                    key={house.id}
+                    className="border-b border-slate-200 hover:bg-slate-50 transition-colors"
+                  >
+                    <td className="px-6 py-4 font-semibold text-gray-900">
+                      {house.name}
+                    </td>
+                    <td className="px-6 py-4 text-gray-700">
+                      {house.landArea}
+                    </td>
+                    <td className="px-6 py-4 text-gray-700">
+                      {house.buildingArea}
+                    </td>
+                    <td className="px-6 py-4 text-gray-700">{house.bedroom}</td>
+                    <td className="px-6 py-4 font-bold text-black">
+                      {house.priceStartFrom}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
