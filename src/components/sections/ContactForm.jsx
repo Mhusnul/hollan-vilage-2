@@ -25,7 +25,7 @@ export default function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Build WhatsApp message from form data
     const message = `
 *INQUIRY HOLLAND VILLAGE SUKABUMI*
@@ -42,17 +42,17 @@ ${formData.message || "--"}
 ---
 Terima kasih telah menghubungi kami! 🙏
     `.trim();
-    
+
     // Encode message for WhatsApp URL
     const encodedMessage = encodeURIComponent(message);
-    
+
     // Open WhatsApp with pre-filled message
     const whatsappUrl = `${marketing.agents[0].whatsapp}?text=${encodedMessage}`;
     window.open(whatsappUrl, "_blank");
-    
+
     // Show success message
     setIsSubmitted(true);
-    
+
     // Clear form and reset after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
