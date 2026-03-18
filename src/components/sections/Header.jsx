@@ -51,9 +51,9 @@ export default function Header() {
             <Button
               size="sm"
               variant="primary"
-              className="hidden sm:inline-flex bg-gray-900 hover:bg-gray-800 text-white"
+              className="!hidden md:!block sm:inline-flex bg-gray-900 hover:bg-gray-800 text-white"
             >
-              Find A House
+              Temukan Rumah
             </Button>
 
             {/* Mobile Menu Button */}

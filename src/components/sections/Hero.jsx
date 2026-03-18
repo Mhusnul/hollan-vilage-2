@@ -1,8 +1,19 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import heroImg from "../../assets/background3.jpg";
+import { marketing } from "../../data/config";
 
 export default function Hero() {
+  const handleExploreProperties = () => {
+    const element = document.getElementById("houses");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleContactUs = () => {
+    window.open(marketing.agents[0].whatsapp, "_blank");
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center text-white text-center">
       {/* Background */}
@@ -37,12 +48,18 @@ export default function Hero() {
 
         {/* CTA */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-10">
-          <button className="px-6 py-3 bg-white text-black rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition">
+          <button
+            onClick={handleExploreProperties}
+            className="px-6 py-3 bg-white text-black rounded-lg font-semibold flex items-center justify-center gap-2 hover:bg-gray-200 transition"
+          >
             Jelajahi Properti
             <ArrowRight size={18} />
           </button>
 
-          <button className="px-6 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition">
+          <button
+            onClick={handleContactUs}
+            className="px-6 py-3 border border-white rounded-lg font-semibold hover:bg-white hover:text-black transition"
+          >
             Hubungi Kami
           </button>
         </div>
@@ -50,11 +67,11 @@ export default function Hero() {
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6">
           <div>
-            <p className="text-3xl font-bold">1200+</p>
+            <p className="text-3xl font-bold">135+</p>
             <p className="text-gray-300 text-sm">Properti</p>
           </div>
           <div>
-            <p className="text-3xl font-bold">4500+</p>
+            <p className="text-3xl font-bold">100+</p>
             <p className="text-gray-300 text-sm">Pelanggan</p>
           </div>
           <div>

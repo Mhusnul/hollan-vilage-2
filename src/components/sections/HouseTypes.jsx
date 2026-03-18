@@ -1,10 +1,21 @@
 import React, { useState } from "react";
-import { houseTypes } from "../../data/config";
+import { houseTypes, marketing } from "../../data/config";
 import { BedDouble, Home, Ruler } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
 
 export default function HouseTypes() {
   const [activeType, setActiveType] = useState(houseTypes[0]);
+
+  const handleContactAgent = () => {
+    window.open(marketing.agents[0].whatsapp, "_blank");
+  };
+
+  const handleScheduleSurvey = () => {
+    const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="houses" className="py-4 bg-gray-50">
@@ -66,13 +77,13 @@ export default function HouseTypes() {
             <div className="grid grid-cols-3 gap-4 mb-8">
               <div className="flex flex-col items-center bg-white p-4 rounded-xl border">
                 <Home size={20} />
-                <p className="text-sm mt-2 text-gray-500">Tanah</p>
+                <p className="text-sm mt-2 text-gray-500">Bangunan</p>
                 <p className="font-semibold">{activeType.landArea}</p>
               </div>
 
               <div className="flex flex-col items-center bg-white p-4 rounded-xl border">
                 <Ruler size={20} />
-                <p className="text-sm mt-2 text-gray-500">Bangunan</p>
+                <p className="text-sm mt-2 text-gray-500">Tanah</p>
                 <p className="font-semibold">{activeType.buildingArea}</p>
               </div>
 
@@ -99,11 +110,17 @@ export default function HouseTypes() {
 
             {/* CTA */}
             <div className="flex gap-4">
-              <button className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800">
+              <button
+                onClick={handleContactAgent}
+                className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800"
+              >
                 Hubungi Agen
               </button>
 
-              <button className="px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-100">
+              <button
+                onClick={handleScheduleSurvey}
+                className="px-6 py-3 border border-gray-300 rounded-lg font-semibold hover:bg-gray-100"
+              >
                 Jadwalkan Survey
               </button>
             </div>

@@ -9,6 +9,7 @@ import type36Img from "../assets/type36.png";
 import denah6096Img from "../assets/denah-type-60-96.png";
 import denah4572Img from "../assets/denah-type-45-75.png";
 import denah3672Img from "../assets/denah-type-36-72.png";
+import denahPerumahanImg from "../assets/denah-holland-village.png";
 import fasilitasSecurityImg from "../assets/fasilitas_security.jpg";
 import fasilitas0neGateImg from "../assets/fasilitas_onegate.jpg";
 import fasilitas_masjidImg from "../assets/fasilitas_masjid.jpg";
@@ -21,11 +22,11 @@ import background2Img from "../assets/background2.jpg";
 // Company Information
 export const company = {
   name: "PT. PUSPA AGRA PROPERTI",
-  companyNameShort: "Hollan Village",
+  companyNameShort: "Hollan Village Sukabumi",
   logo: logoImg,
   tagline: "Impian Anda Menjadi Kenyataan",
   description:
-    "Hollan Village adalah developer perumahan terpercaya yang menghadirkan hunian berkualitas dengan harga terjangkau dan lokasi strategi di Kota Sukabumi.",
+    "PT. PUSPA AGRA PROPERTI adalah developer perumahan terpercaya yang menghadirkan hunian berkualitas dengan harga terjangkau dan lokasi strategi di Kota Sukabumi.",
   yearEstablished: 2025,
   vision:
     "Menjadi developer properti terdepan di Sukabumi yang menghadirkan hunian berkualitas dengan harga terjangkau.",
@@ -44,8 +45,8 @@ export const project = {
     "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
   fullAddress:
     "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
-  areaSize: "Strategi Lokasi",
-  totalUnits: 850,
+  areaSize: "21.000 M²",
+  totalUnits: 135,
   status: "On Progress", // Pre-launch, On Progress, Ready Stock
   description:
     "Holland Village Sukabumi adalah perumahan modern yang dirancang untuk memenuhi kebutuhan keluarga modern dengan fasilitas lengkap dan lokasi strategis. Setiap detail desain telah dipikirkan dengan matang untuk menciptakan lingkungan hunian yang nyaman dan berkelanjutan.",
@@ -67,14 +68,14 @@ export const houseTypes = [
     name: "Type 60/116",
     landArea: "60 m²",
     buildingArea: "116 m²",
-    bedroom: 2,
+    bedroom: 3,
     floor: 2,
     priceStartFrom: "Rp 759.000.000",
     dpAmount: "Rp 75.900.000",
     kprAmount: "Rp 673.100.000",
-    roomDetails: "2 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
+    roomDetails: "3 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu",
     specification: [
-      "Desain modern 2 lantai",
+      "Desain modern 1 lantai",
       "Dapur semi terbuka dengan fungsi optimal",
       "Garasi 1 mobil dengan carport",
       "Carport: Grass Block",
@@ -95,14 +96,14 @@ export const houseTypes = [
     name: "Type 60/96",
     landArea: "60 m²",
     buildingArea: "96 m²",
-    bedroom: 2,
+    bedroom: 3,
     floor: 2,
     priceStartFrom: "Rp 659.000.000",
     dpAmount: "Rp 65.900.000",
     kprAmount: "Rp 588.100.000",
-    roomDetails: "2 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
+    roomDetails: "3 Kamar Tidur, 2 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
     specification: [
-      "Desain modern minimalis 2 lantai",
+      "Desain modern minimalis 1 lantai",
       "Dapur semi terbuka yang fungsional",
       "Garasi 1 mobil dengan carport grass block",
       "Halaman yang cukup untuk kebutuhan keluarga",
@@ -130,14 +131,14 @@ export const houseTypes = [
     kprAmount: "Rp 436.600.000",
     roomDetails: "2 Kamar Tidur, 1 Kamar Mandi, 1 Ruang Tamu, 1 Dapur",
     specification: [
-      "Desain modern kompak 2 lantai",
+      "Desain modern kompak 1 lantai",
       "Dapur semi terbuka dengan layout efisien",
       "Garasi 1 mobil dengan carport grass block",
       "Halaman yang optimal untuk ruang terbuka",
       "Pondasi: Tapak - Cakar Ayam",
       "Struktur: Beton Bertulang",
       "Dinding: Bata Ringan, Plester & Cat",
-      "Kusen: Alumunium & Kayu",
+      "Kusen: Alumunium",
       "Atap: Genteng Keramik/Karmuri Flat",
       "Plafon: Gypsum, GRC/Hollow",
       "Lantai: Granit 60x60",
@@ -219,21 +220,7 @@ export const facilities = [
     icon: "run",
     image: fasilitas_joggingtrackImg,
   },
-  {
-    id: 6,
-    name: "Kolam Renang",
-    description: "Kolam renang Olympic-size dengan fasilitas lengkap",
-    icon: "swim",
-    image: fasilitas_kolamImg,
-  },
-  {
-    id: 7,
-    name: "Club House",
-    description:
-      "Pusat komunitas dengan berbagai fasilitas sosial dan olahraga",
-    icon: "building",
-    image: background1Img,
-  },
+
   {
     id: 8,
     name: "Area Komersial",
@@ -256,7 +243,7 @@ export const advantages = [
     id: 2,
     title: "Dekat Rumah Sakit",
     description: "Fasilitas kesehatan terlengkap hanya 3 menit perjalanan",
-    distance: "3 menit",
+    distance: "10 menit",
     icon: "hospital",
   },
   {
@@ -425,11 +412,159 @@ export const pricing = {
     "Jika ada pembatalan oleh konsumen saat proses Bank atau SPPK sudah diterbitkan, maka akan dikenakan penalti sebesar 50% dari DP yang sudah dibayarkan ke Developer",
 };
 
+// Denah Perumahan Specifications
+export const denahPerumahan = {
+  image: denahPerumahanImg,
+  title: "Denah Holland Village Sukabumi",
+
+  // Land Use Specifications
+  landUseBreakdown: [
+    {
+      no: 1,
+      name: "Luas Efektif Kaveling",
+      area: "11,876.30",
+      percentage: "47.42",
+    },
+    {
+      no: 2,
+      name: "Masjid dan Parkir",
+      area: "255.71",
+      percentage: "1.18",
+    },
+    {
+      no: 3,
+      name: "Ruang Terbuka Hijau",
+      area: "5,189.17",
+      percentage: "7.21",
+    },
+    {
+      no: 4,
+      name: "Pos Keamanan",
+      area: "8.00",
+      percentage: "0.04",
+    },
+    {
+      no: 5,
+      name: "TPS",
+      area: "52.14",
+      percentage: "0.02",
+    },
+    {
+      no: 6,
+      name: "Sirkulasi",
+      area: "5,682.85",
+      percentage: "26.26",
+    },
+  ],
+  totalArea: "23,283.11",
+  totalPercentage: "100.00",
+
+  // Unit Details
+  unitDetails: [
+    {
+      no: 1,
+      block: "A",
+      landArea: "60/96",
+      unit: 29,
+      luasUnit: "1.920,00",
+      price: "-",
+    },
+    {
+      no: 2,
+      block: "B",
+      landArea: "60/96",
+      unit: 32,
+      luasUnit: "880,00",
+      price: "-",
+    },
+    {
+      no: 3,
+      block: "C",
+      landArea: "60/96",
+      unit: 3,
+      luasUnit: "288,00",
+      price: "-",
+    },
+    {
+      no: 4,
+      block: "D",
+      landArea: "60/96",
+      unit: 1,
+      luasUnit: "1.508,00",
+      price: "-",
+    },
+    {
+      no: 5,
+      block: "E",
+      landArea: "45/72",
+      unit: 9,
+      luasUnit: "648,00",
+      price: "-",
+    },
+    {
+      no: 6,
+      block: "F",
+      landArea: "60/96",
+      unit: 16,
+      luasUnit: "288,00",
+      price: "-",
+    },
+    {
+      no: 7,
+      block: "G",
+      landArea: "36/72",
+      unit: 9,
+      luasUnit: "648,00",
+      price: "-",
+    },
+    {
+      no: 8,
+      block: "H",
+      landArea: "60/96",
+      unit: 10,
+      luasUnit: "960,00",
+      price: "-",
+    },
+    {
+      no: 9,
+      block: "I",
+      landArea: "60/96",
+      unit: 9,
+      luasUnit: "864,00",
+      price: "-",
+    },
+    {
+      no: 10,
+      block: "J",
+      landArea: "60/96",
+      unit: 3,
+      luasUnit: "288,00",
+      price: "-",
+    },
+    {
+      no: 11,
+      block: "K",
+      landArea: "60/96",
+      unit: 6,
+      luasUnit: "432,00",
+      price: "-",
+    },
+    {
+      no: 12,
+      block: "L",
+      landArea: "60/96",
+      unit: 1,
+      luasUnit: "672,00",
+      price: "-",
+    },
+  ],
+};
+
 // Marketing Contact
 export const marketing = {
   name: "Holland Village Sukabumi",
-  phone: "+62 858-0000-5300",
-  email: "info@hollandvillage.id",
+  phone: "+62 897-6297-053",
+  email: "marketinghollandvillage@gmail.com",
   officeAddress:
     "Jl. Garuda, Sindangpalay, Kec. Cibeureum, Kota Sukabumi, Jawa Barat",
   operationalHours: "Setiap Hari",
@@ -438,15 +573,9 @@ export const marketing = {
   agents: [
     {
       id: 1,
-      name: "Rudi Wahyu P",
-      phone: "+62 858-0000-5300",
-      whatsapp: "https://wa.me/6285800005300",
-    },
-    {
-      id: 2,
-      name: "Fitri Ramadhani",
-      phone: "+62 812-2063-3161",
-      whatsapp: "https://wa.me/6281220633161",
+      name: "Adiansyah Anwar",
+      phone: "+62 897-6297-053",
+      whatsapp: "https://wa.me/628976297053",
     },
   ],
   bankTransfer: {

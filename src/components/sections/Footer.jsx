@@ -28,7 +28,9 @@ export default function Footer() {
                 className="h-12 w-12 object-contain rounded-lg"
               />
               <div>
-                <h3 className="text-white font-bold text-lg">{company.name}</h3>
+                <h3 className="text-white font-bold text-lg">
+                  {company.companyNameShort}
+                </h3>
                 <p className="text-xs text-slate-400">{company.tagline}</p>
               </div>
             </div>
@@ -182,8 +184,8 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 mb-8">
           <p className="mb-4 md:mb-0">
-            © {currentYear} {company.name}. Semua hak dilindungi. | PT. Sky
-            Estate Indonesia
+            © {currentYear} {company.companyNameShort}. Semua hak dilindungi. |{" "}
+            {company.name}
           </p>
           <div className="flex gap-6">
             <a
@@ -210,7 +212,9 @@ export default function Footer() {
         {/* Social Links */}
         <div className="flex justify-center gap-4">
           <a
-            href="#"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
             title="Facebook"
             aria-label="Facebook"
@@ -218,7 +222,9 @@ export default function Footer() {
             <Facebook size={20} />
           </a>
           <a
-            href="#"
+            href="https://twitter.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
             title="Twitter"
             aria-label="Twitter"
@@ -226,7 +232,9 @@ export default function Footer() {
             <Twitter size={20} />
           </a>
           <a
-            href="#"
+            href={`https://instagram.com/${marketing.instagram.replace("@", "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
             title="Instagram"
             aria-label="Instagram"
@@ -234,7 +242,9 @@ export default function Footer() {
             <Instagram size={20} />
           </a>
           <a
-            href="#"
+            href={marketing.agents[0].whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
             title="WhatsApp"
             aria-label="WhatsApp"

@@ -1,5 +1,7 @@
 import {
   Car,
+  StretchVertical,
+  Bus,
   BookOpen,
   Hospital,
   ShoppingBag,
@@ -46,11 +48,13 @@ import {
 // Icon mapping untuk keunggulan lokasi
 export const advantageIcons = {
   car: Car,
+  bus: Bus,
   school: BookOpen,
   hospital: Hospital,
   mall: ShoppingBag,
   train: Train,
   tree: Trees,
+  map: StretchVertical,
 };
 
 // Icon mapping untuk fasilitas

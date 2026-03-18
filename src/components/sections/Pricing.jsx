@@ -1,12 +1,15 @@
 import React from "react";
-import { pricing, houseTypes } from "../../data/config";
+import { pricing, houseTypes, marketing } from "../../data/config";
 import SectionTitle from "../common/SectionTitle";
 import { Check } from "lucide-react";
 import Button from "../common/Button";
 
 export default function Pricing() {
+  const handleContactForPromo = () => {
+    window.open(marketing.agents[0].whatsapp, "_blank");
+  };
   return (
-    <section className="py-12 bg-white">
+    <section id="pricing" className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Harga & Promosi"
@@ -74,7 +77,12 @@ export default function Pricing() {
               </ul>
 
               {/* CTA Button */}
-              <Button variant="primary" size="lg" className="w-full">
+              <Button
+                variant="primary"
+                size="lg"
+                className="w-full"
+                onClick={handleContactForPromo}
+              >
                 Hubungi Kami Untuk Promo Menarik
               </Button>
             </div>
@@ -96,10 +104,10 @@ export default function Pricing() {
                     Tipe
                   </th>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">
-                    Luas Tanah
+                    Luas Bangunan
                   </th>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">
-                    Luas Bangunan
+                    Luas Tanah
                   </th>
                   <th className="px-6 py-4 text-left font-semibold text-gray-900">
                     Kamar Tidur
