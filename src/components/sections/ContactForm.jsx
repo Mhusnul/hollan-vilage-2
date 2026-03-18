@@ -68,7 +68,7 @@ Terima kasih telah menghubungi kami! 🙏
 
   return (
     <section id="contact" className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Hubungi Kami"
           subtitle="Konsultasikan kebutuhan properti Anda dengan tim profesional kami yang siap membantu"

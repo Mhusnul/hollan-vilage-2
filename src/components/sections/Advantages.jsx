@@ -6,7 +6,7 @@ import { getIconComponent } from "../../utils/iconUtils";
 export default function Advantages() {
   return (
     <section id="advantages" className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Keunggulan Lokasi"
           subtitle="Lokasi strategis dengan akses mudah ke berbagai fasilitas penting di sekitar perumahan"

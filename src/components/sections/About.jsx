@@ -7,7 +7,7 @@ import aboutImg from "../../assets/background2.jpg"; // pakai salah satu image k
 export default function About() {
   return (
     <section id="about" className="py-5 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Tentang Kami"
           subtitle="Komitmen kami menghadirkan hunian berkualitas untuk masa depan Anda"

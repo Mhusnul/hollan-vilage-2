@@ -5,7 +5,7 @@ import SectionTitle from "../common/SectionTitle";
 export default function Denah() {
   return (
     <section id="denah" className="py-12 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Denah Perumahan"
           subtitle="Visualisasi layout dan spesifikasi penggunaan lahan Holland Village Sukabumi"

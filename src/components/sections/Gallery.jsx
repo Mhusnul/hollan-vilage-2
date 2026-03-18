@@ -28,7 +28,7 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Galeri Foto"
           subtitle="Lihat keindahan dan fasilitas Holland Village melalui koleksi foto eksklusif kami"

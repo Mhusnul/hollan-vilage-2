@@ -10,7 +10,7 @@ export default function Pricing() {
   };
   return (
     <section id="pricing" className="py-12 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Harga & Promosi"
           subtitle="Penawaran spesial dengan skema pembayaran yang fleksibel untuk kemudahan Anda"

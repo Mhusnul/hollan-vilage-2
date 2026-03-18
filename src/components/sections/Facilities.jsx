@@ -9,7 +9,7 @@ export default function Facilities() {
 
   return (
     <section id="facilities" className="py-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Fasilitas"
           subtitle="Dirancang untuk kenyamanan, keamanan, dan kualitas hidup terbaik"

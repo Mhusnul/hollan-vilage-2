@@ -19,7 +19,7 @@ export default function HouseTypes() {
 
   return (
     <section id="houses" className="py-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8">
         <SectionTitle
           title="Tipe Rumah"
           subtitle="Pilih tipe rumah yang sesuai dengan kebutuhan dan gaya hidup Anda"
