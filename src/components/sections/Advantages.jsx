@@ -1,9 +1,70 @@
 import React from "react";
-import { advantages } from "../../data/config";
+import { useContentSections } from "../../hooks";
 import SectionTitle from "../common/SectionTitle";
 import { getIconComponent } from "../../utils/iconUtils";
 
 export default function Advantages() {
+  const { getSectionByKey, loading } = useContentSections();
+
+  if (loading) {
+    return (
+      <section id="advantages" className="py-12 bg-white">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
+  const advantagesData = getSectionByKey("advantages");
+
+  // Parse advantages from content if available
+  let advantages = [];
+  if (advantagesData?.meta_data && Array.isArray(advantagesData.meta_data)) {
+    advantages = advantagesData.meta_data;
+  } else if (advantagesData?.content) {
+    // Fallback: parse from content string
+    advantages = [
+      {
+        id: 1,
+        title: "Lokasi Strategis",
+        description: advantagesData.content,
+        icon: "MapPin",
+        distance: "Pusat Kota",
+      },
+    ];
+  }
+
+  // Default advantages if no data
+  if (advantages.length === 0) {
+    advantages = [
+      {
+        id: 1,
+        title: "Lokasi Strategis",
+        description:
+          "Berada di lokasi strategis dengan akses mudah ke pusat kota dan berbagai fasilitas umum",
+        icon: "MapPin",
+        distance: "10 min",
+      },
+      {
+        id: 2,
+        title: "Fasilitas Lengkap",
+        description:
+          "Dilengkapi dengan fasilitas lengkap untuk mendukung gaya hidup keluarga modern",
+        icon: "Home",
+        distance: "Tersedia",
+      },
+      {
+        id: 3,
+        title: "Harga Terjangkau",
+        description:
+          "Dengan cicilan ringan dan berbagai skema pembayaran yang fleksibel",
+        icon: "DollarSign",
+        distance: "Kompetitif",
+      },
+    ];
+  }
+
   return (
     <section id="advantages" className="py-12 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">

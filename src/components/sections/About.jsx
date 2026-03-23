@@ -1,10 +1,25 @@
 import React from "react";
 import { Building2, MapPin, CheckCircle } from "lucide-react";
-import { company, project } from "../../data/config";
+import { useContentSections } from "../../hooks";
 import SectionTitle from "../common/SectionTitle";
-import aboutImg from "../../assets/background2.jpg"; // pakai salah satu image kamu
+import aboutImg from "../../assets/background2.jpg";
 
 export default function About() {
+  const { getSectionByKey, loading } = useContentSections();
+
+  if (loading) {
+    return (
+      <section id="about" className="py-5 bg-white">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
+  const companyInfo = getSectionByKey("company_info");
+  const projectInfo = getSectionByKey("project_info");
+
   return (
     <section id="about" className="py-5 bg-white">
       <div className="w-full px-4 sm:px-6 lg:px-8">
@@ -18,7 +33,7 @@ export default function About() {
           {/* IMAGE */}
           <div className="relative">
             <img
-              src={aboutImg}
+              src={companyInfo?.image_url || aboutImg}
               alt="About"
               className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
             />
@@ -29,16 +44,18 @@ export default function About() {
             <div className="flex items-center gap-3 mb-4">
               <Building2 />
               <h3 className="text-2xl font-bold text-gray-900">
-                {company.name}
+                {companyInfo?.title || "PT. PUSPA AGRA PROPERTI"}
               </h3>
             </div>
 
             <p className="text-gray-600 leading-relaxed mb-6">
-              {company.description}
+              {companyInfo?.content ||
+                "Kami berkomitmen menghadirkan hunian berkualitas tinggi dengan harga terjangkau untuk masa depan Anda yang lebih baik."}
             </p>
 
             <p className="text-sm text-gray-500">
-              Berdiri sejak {company.yearEstablished}
+              {companyInfo?.description ||
+                "Berdiri dengan visi membangun perumahan impian keluarga Indonesia"}
             </p>
           </div>
         </div>
@@ -48,18 +65,33 @@ export default function About() {
           {/* TEXT */}
           <div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Visi & Misi
+              About Holland Village
             </h3>
 
-            <p className="text-gray-600 mb-6">{company.vision}</p>
+            <p className="text-gray-600 mb-6">
+              {projectInfo?.content ||
+                "Holland Village adalah perumahan modern yang dirancang dengan konsep hunian lengkap, nyaman, dan berkelanjutan untuk keluarga Indonesia."}
+            </p>
 
             <div className="space-y-3">
-              {company.mission.map((item, index) => (
-                <div key={index} className="flex gap-3">
-                  <CheckCircle size={18} className="mt-1 text-black" />
-                  <p className="text-gray-600">{item}</p>
-                </div>
-              ))}
+              <div className="flex gap-3">
+                <CheckCircle size={18} className="mt-1 text-black" />
+                <p className="text-gray-600">
+                  Lokasi strategis di Kota Sukabumi
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <CheckCircle size={18} className="mt-1 text-black" />
+                <p className="text-gray-600">
+                  Fasilitas lengkap untuk keluarga
+                </p>
+              </div>
+              <div className="flex gap-3">
+                <CheckCircle size={18} className="mt-1 text-black" />
+                <p className="text-gray-600">
+                  Cicilan ringan dengan sistem pembayaran fleksibel
+                </p>
+              </div>
             </div>
           </div>
 
@@ -70,31 +102,6 @@ export default function About() {
               alt="Vision"
               className="rounded-2xl shadow-xl w-full h-[400px] object-cover"
             />
-          </div>
-        </div>
-
-        {/* SECTION 3 - PROJECT HIGHLIGHT */}
-        <div className="mt-24 bg-gray-900 text-white rounded-3xl p-10 lg:p-16">
-          <h3 className="text-3xl font-bold mb-8 text-center">
-            {project.name}
-          </h3>
-
-          <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div className="space-y-2">
-              <MapPin className="mx-auto" />
-              <p className="text-gray-300 text-sm">Lokasi</p>
-              <p className="font-semibold">{project.location}</p>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-gray-300 text-sm">Luas Area</p>
-              <p className="text-2xl font-bold">{project.areaSize}</p>
-            </div>
-
-            <div className="space-y-2">
-              <p className="text-gray-300 text-sm">Total Unit</p>
-              <p className="text-2xl font-bold">{project.totalUnits}</p>
-            </div>
           </div>
         </div>
       </div>

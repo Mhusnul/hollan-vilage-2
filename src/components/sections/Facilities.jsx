@@ -1,9 +1,31 @@
 import React from "react";
-import { facilities } from "../../data/config";
+import { useFacilities } from "../../hooks";
 import SectionTitle from "../common/SectionTitle";
 import { getIconComponent } from "../../utils/iconUtils";
 
 export default function Facilities() {
+  const { facilities, loading } = useFacilities();
+
+  if (loading) {
+    return (
+      <section id="facilities" className="py-4 bg-gray-50">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!facilities || facilities.length === 0) {
+    return (
+      <section id="facilities" className="py-4 bg-gray-50">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Tidak ada data fasilitas</div>
+        </div>
+      </section>
+    );
+  }
+
   const mainFacilities = facilities.slice(0, 3);
   const otherFacilities = facilities.slice(3);
 
@@ -15,23 +37,25 @@ export default function Facilities() {
           subtitle="Dirancang untuk kenyamanan, keamanan, dan kualitas hidup terbaik"
         />
         {/* SECONDARY LIST (MINIMAL) */}
-        <div className="mt-5">
-          <div className="flex flex-wrap justify-center gap-3">
-            {otherFacilities.map((facility) => {
-              const Icon = getIconComponent(facility.icon);
+        {otherFacilities.length > 0 && (
+          <div className="mt-5">
+            <div className="flex flex-wrap justify-center gap-3">
+              {otherFacilities.map((facility) => {
+                const Icon = getIconComponent(facility.icon);
 
-              return (
-                <div
-                  key={facility.id}
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:bg-gray-100 transition"
-                >
-                  {Icon && <Icon size={16} />}
-                  {facility.name}
-                </div>
-              );
-            })}
+                return (
+                  <div
+                    key={facility.id}
+                    className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    {Icon && <Icon size={16} />}
+                    {facility.name}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
+        )}
         {/* MAIN HIGHLIGHT (BIG IMAGE) */}
         <div className="grid lg:grid-cols-3 gap-6 mt-16">
           {mainFacilities.map((facility) => {

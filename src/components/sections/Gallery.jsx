@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { gallery } from "../../data/config";
+import { useGallery } from "../../hooks";
 import SectionTitle from "../common/SectionTitle";
 import { X } from "lucide-react";
 
 export default function Gallery() {
+  const { images, loading } = useGallery();
   const [selectedImage, setSelectedImage] = useState(null);
   const [filter, setFilter] = useState("all");
   const [showMore, setShowMore] = useState(false);
@@ -15,10 +16,30 @@ export default function Gallery() {
     { value: "facility", label: "Fasilitas" },
   ];
 
+  if (loading) {
+    return (
+      <section id="gallery" className="py-12 bg-white">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Loading...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!images || images.length === 0) {
+    return (
+      <section id="gallery" className="py-12 bg-white">
+        <div className="w-full px-4">
+          <div className="text-center py-12">Tidak ada foto galeri</div>
+        </div>
+      </section>
+    );
+  }
+
   const filteredGallery =
     filter === "all"
-      ? gallery
-      : gallery.filter((item) => item.category === filter);
+      ? images
+      : images.filter((item) => item.category === filter);
 
   // Show only 6 items for "all" filter, show all for other filters
   const displayedGallery =
@@ -63,7 +84,7 @@ export default function Gallery() {
               onClick={() => setSelectedImage(item)}
             >
               <img
-                src={item.image}
+                src={item.image_url}
                 alt={item.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-smooth"
               />
