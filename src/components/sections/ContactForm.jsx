@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { marketing, houseTypes } from "../../data/config";
 import SectionTitle from "../common/SectionTitle";
 import Button from "../common/Button";
-import { Phone, Mail, MapPin, Clock, User } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, } from "lucide-react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

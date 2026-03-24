@@ -136,7 +136,7 @@ export default function Denah() {
 
             <div className="mt-4 pt-4 border-t border-gray-200">
               <p className="text-sm text-gray-600">
-                <span className="font-semibold">Total Unit:</span> 128 unit
+                <span className="font-semibold">Total Unit:</span> 135+ unit
               </p>
             </div>
           </div>

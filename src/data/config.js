@@ -11,12 +11,10 @@ import denah4572Img from "../assets/denah-type-45-75.png";
 import denah3672Img from "../assets/denah-type-36-72.png";
 import denahPerumahanImg from "../assets/denah-holland-village.png";
 import fasilitasSecurityImg from "../assets/fasilitas_security.jpg";
-import fasilitas0neGateImg from "../assets/fasilitas_onegate.jpg";
+import fasilitas0neGateImg from "../assets/bg1.jpeg";
 import fasilitas_masjidImg from "../assets/fasilitas_masjid.jpg";
 import fasilitas_tamanImg from "../assets/fasilitas_taman.jpg";
 import fasilitas_joggingtrackImg from "../assets/fasilitas_joggingtrack.jpg";
-import fasilitas_kolamImg from "../assets/fasilitas_kolam.jpg";
-import background1Img from "../assets/backgroud1.jpg";
 import background2Img from "../assets/background2.jpg";
 
 // Company Information
@@ -242,7 +240,7 @@ export const advantages = [
   {
     id: 2,
     title: "Dekat Rumah Sakit",
-    description: "Fasilitas kesehatan terlengkap hanya 3 menit perjalanan",
+    description: "Fasilitas kesehatan terlengkap hanya 10 menit perjalanan",
     distance: "10 menit",
     icon: "hospital",
   },
@@ -465,7 +463,7 @@ export const denahPerumahan = {
       no: 1,
       block: "A",
       landArea: "60/96",
-      unit: 29,
+      unit: 20,
       luasUnit: "1.920,00",
       price: "-",
     },
@@ -473,8 +471,8 @@ export const denahPerumahan = {
       no: 2,
       block: "B",
       landArea: "60/96",
-      unit: 32,
-      luasUnit: "880,00",
+      unit: 5,
+      luasUnit: "480,00",
       price: "-",
     },
     {
@@ -487,14 +485,22 @@ export const denahPerumahan = {
     },
     {
       no: 4,
-      block: "D",
-      landArea: "60/96",
-      unit: 1,
-      luasUnit: "1.508,00",
+      block: "C",
+      landArea: "45/72",
+      unit: 4,
+      luasUnit: "288,00",
       price: "-",
     },
     {
       no: 5,
+      block: "D",
+      landArea: "60/116",
+      unit: 13,
+      luasUnit: "1.508,00",
+      price: "-",
+    },
+    {
+      no: 6,
       block: "E",
       landArea: "45/72",
       unit: 9,
@@ -502,40 +508,32 @@ export const denahPerumahan = {
       price: "-",
     },
     {
-      no: 6,
-      block: "F",
+      no: 7,
+      block: "E",
       landArea: "60/96",
-      unit: 16,
+      unit: 3,
       luasUnit: "288,00",
       price: "-",
     },
     {
-      no: 7,
-      block: "G",
+      no: 8,
+      block: "F",
       landArea: "36/72",
       unit: 9,
       luasUnit: "648,00",
       price: "-",
     },
     {
-      no: 8,
-      block: "H",
-      landArea: "60/96",
-      unit: 10,
-      luasUnit: "960,00",
-      price: "-",
-    },
-    {
       no: 9,
-      block: "I",
-      landArea: "60/96",
-      unit: 9,
-      luasUnit: "864,00",
+      block: "G",
+      landArea: "36/72",
+      unit: 16,
+      luasUnit: "10152,00",
       price: "-",
     },
     {
       no: 10,
-      block: "J",
+      block: "G",
       landArea: "60/96",
       unit: 3,
       luasUnit: "288,00",
@@ -543,17 +541,49 @@ export const denahPerumahan = {
     },
     {
       no: 11,
-      block: "K",
+      block: "H",
       landArea: "60/96",
+      unit: 10,
+      luasUnit: "960,00",
+      price: "-",
+    },
+    {
+      no: 12,
+      block: "I",
+      landArea: "60/96",
+      unit: 9,
+      luasUnit: "864,00",
+      price: "-",
+    },
+    {
+      no: 13,
+      block: "J",
+      landArea: "60/96",
+      unit: 3,
+      luasUnit: "288,00",
+      price: "-",
+    },
+    {
+      no: 14,
+      block: "J",
+      landArea: "36/72",
+      unit: 16,
+      luasUnit: "1152,00",
+      price: "-",
+    },
+    {
+      no: 15,
+      block: "K",
+      landArea: "36/72",
       unit: 6,
       luasUnit: "432,00",
       price: "-",
     },
     {
-      no: 12,
+      no: 16,
       block: "L",
       landArea: "60/96",
-      unit: 1,
+      unit: 7,
       luasUnit: "672,00",
       price: "-",
     },

@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import heroImg from "../../assets/background3.jpg";
+import heroImg from "../../assets/bg1.jpeg";
 import { marketing } from "../../data/config";
 
 export default function Hero() {

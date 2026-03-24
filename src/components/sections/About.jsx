@@ -2,7 +2,7 @@ import React from "react";
 import { Building2, MapPin, CheckCircle } from "lucide-react";
 import { company, project } from "../../data/config";
 import SectionTitle from "../common/SectionTitle";
-import aboutImg from "../../assets/background2.jpg"; // pakai salah satu image kamu
+import aboutImg from "../../assets/bg2.jpeg"; // pakai salah satu image kamu
 
 export default function About() {
   return (
