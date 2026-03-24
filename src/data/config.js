@@ -50,9 +50,9 @@ export const project = {
     "Holland Village Sukabumi adalah perumahan modern yang dirancang untuk memenuhi kebutuhan keluarga modern dengan fasilitas lengkap dan lokasi strategis. Setiap detail desain telah dipikirkan dengan matang untuk menciptakan lingkungan hunian yang nyaman dan berkelanjutan.",
   googleMapsLink: "https://maps.google.com/?q=Holland+Village+Sukabumi",
   landmarks: [
-    { name: "Indo Grosir", distance: "10 menit" },
-    { name: "Rumah Sakit", distance: "3 menit" },
-    { name: "Kampus IPB Sukabumi", distance: "5 menit" },
+    { name: "Indo Grosir", distance: "" },
+    { name: "Rumah Sakit", distance: "10 menit" },
+    { name: "Kampus IPB Sukabumi", distance: "3 menit" },
     { name: "Terminal Bis", distance: "5 menit" },
     { name: "Rencana Exit Tol Bocimi", distance: "3 km" },
     { name: "Akses Jalur Provinsi", distance: "Dekat" },
@@ -233,8 +233,8 @@ export const advantages = [
   {
     id: 1,
     title: "Dekat Indo Grosir",
-    description: "Hanya 10 menit dari Indo Grosir untuk kebutuhan belanja Anda",
-    distance: "10 menit",
+    description: "Dekat Indo Grosir untuk kebutuhan belanja Anda",
+    distance: "Kebutuhan",
     icon: "car",
   },
   {
@@ -247,8 +247,8 @@ export const advantages = [
   {
     id: 3,
     title: "Dekat Kampus IPB Sukabumi",
-    description: "Lokasi ideal untuk mahasiswa dengan jarak 5 menit",
-    distance: "5 menit",
+    description: "Lokasi ideal untuk mahasiswa dengan jarak 3 menit",
+    distance: "3 menit",
     icon: "school",
   },
   {
@@ -421,7 +421,7 @@ export const denahPerumahan = {
       no: 1,
       name: "Luas Efektif Kaveling",
       area: "11,876.30",
-      percentage: "47.42",
+      percentage: "54.88",
     },
     {
       no: 2,
@@ -432,8 +432,8 @@ export const denahPerumahan = {
     {
       no: 3,
       name: "Ruang Terbuka Hijau",
-      area: "5,189.17",
-      percentage: "7.21",
+      area: "3,810.41",
+      percentage: "17.61",
     },
     {
       no: 4,
@@ -444,17 +444,17 @@ export const denahPerumahan = {
     {
       no: 5,
       name: "TPS",
-      area: "52.14",
+      area: "5.24",
       percentage: "0.02",
     },
     {
       no: 6,
       name: "Sirkulasi",
-      area: "5,682.85",
+      area: "5,682.95",
       percentage: "26.26",
     },
   ],
-  totalArea: "23,283.11",
+  totalArea: "21,638.31",
   totalPercentage: "100.00",
 
   // Unit Details
@@ -583,7 +583,7 @@ export const denahPerumahan = {
       no: 16,
       block: "L",
       landArea: "60/96",
-      unit: 7,
+      unit: 6,
       luasUnit: "672,00",
       price: "-",
     },
