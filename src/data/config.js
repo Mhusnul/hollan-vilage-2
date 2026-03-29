@@ -272,6 +272,13 @@ export const advantages = [
     distance: "Strategis",
     icon: "map",
   },
+  {
+    id: 7,
+    title: "Pemda Sukabumi",
+    description: "Dekat dengan gedung Pemda Sukabumi",
+    distance: "Pemerintahan",
+    icon: "gap",
+  },
 ];
 
 // Building Specifications / Material Info
@@ -383,9 +390,9 @@ export const pricing = {
   },
   promo: [
     "FREE BIAYA BPHTB",
-    "FREE BIAYA AJBB",
+    "FREE BIAYA AJB",
     "FREE BIAYA KPR",
-    "DP ringan mulai dari Rp 41.900.000",
+    "Mulai dari Rp 41.900.000",
     "Booking Fee akan dianggap hangus jika pembatalan sepihak dari konsumen",
   ],
   persyaratanKaryawan: [

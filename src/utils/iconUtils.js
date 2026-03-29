@@ -43,6 +43,7 @@ import {
   Lightbulb,
   Award,
   MapPinned,
+  Landmark,
 } from "lucide-react";
 
 // Icon mapping untuk keunggulan lokasi
@@ -55,6 +56,7 @@ export const advantageIcons = {
   train: Train,
   tree: Trees,
   map: StretchVertical,
+  gap: Landmark,
 };
 
 // Icon mapping untuk fasilitas
