@@ -392,7 +392,6 @@ export const pricing = {
     "FREE BIAYA BPHTB",
     "FREE BIAYA AJB",
     "FREE BIAYA KPR",
-    "Mulai dari Rp 41.900.000",
     "Booking Fee akan dianggap hangus jika pembatalan sepihak dari konsumen",
   ],
   persyaratanKaryawan: [
