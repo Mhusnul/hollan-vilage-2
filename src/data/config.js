@@ -20,7 +20,7 @@ import background2Img from "../assets/background2.jpg";
 // Company Information
 export const company = {
   name: "PT. PUSPA AGRA PROPERTI",
-  companyNameShort: "Hollan Village Sukabumi",
+  companyNameShort: "Holland Village Sukabumi",
   logo: logoImg,
   tagline: "Impian Anda Menjadi Kenyataan",
   description:
