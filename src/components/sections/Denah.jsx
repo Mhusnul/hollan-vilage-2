@@ -11,14 +11,87 @@ export default function Denah() {
           subtitle="Visualisasi layout dan spesifikasi penggunaan lahan Holland Village Sukabumi"
         />
 
-        {/* Denah Image */}
-        <div className="mb-12">
+        {/* Denah Image with Details */}
+        <div className="mb-12 grid lg:grid-cols-2 gap-8 items-start">
+          {/* Image Section */}
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200">
             <img
               src={denahPerumahan.image}
               alt={denahPerumahan.title}
               className="w-full h-auto object-cover"
             />
+          </div>
+
+          {/* Details Section */}
+          <div className="space-y-6">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                {denahPerumahan.title}
+              </h3>
+              <p className="text-gray-600 text-base leading-relaxed">
+                Denah Holland Village Sukabumi dirancang dengan mempertimbangkan
+                kenyamanan dan efisiensi penggunaan lahan. Tata letak yang
+                terstruktur memastikan setiap unit mendapatkan akses optimal ke
+                fasilitas umum dan ruang terbuka hijau.
+              </p>
+            </div>
+
+            {/* Key Details */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-5 border border-blue-100">
+              <h4 className="font-semibold text-gray-900 mb-4">
+                Informasi Lahan:
+              </h4>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold flex-shrink-0">
+                    →
+                  </span>
+                  <span className="text-gray-700">
+                    <span className="font-semibold">Total Luas Lahan:</span>{" "}
+                    21.000 m²
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold flex-shrink-0">
+                    →
+                  </span>
+                  <span className="text-gray-700">
+                    <span className="font-semibold">Total Unit:</span> 135+ unit
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold flex-shrink-0">
+                    →
+                  </span>
+                  <span className="text-gray-700">
+                    <span className="font-semibold">Ruang Terbuka Hijau:</span>{" "}
+                    17.61%
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-blue-600 font-bold flex-shrink-0">
+                    →
+                  </span>
+                  <span className="text-gray-700">
+                    <span className="font-semibold">Efektif Kaveling:</span>{" "}
+                    54.88%
+                  </span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Google Drive Link */}
+            <a
+              href="https://drive.google.com/file/d/1HTeEKnbsQQy97vLdI-rp2kuPBURNv-vB/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+              </svg>
+              Lihat Detail Denah di Google Drive
+            </a>
           </div>
         </div>
 

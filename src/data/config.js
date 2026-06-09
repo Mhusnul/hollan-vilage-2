@@ -6,7 +6,7 @@ import type3672Img from "../assets/type-36-72.png";
 import type60Img from "../assets/type60.png";
 import type45Img from "../assets/type45.png";
 import type36Img from "../assets/type36.png";
-import denah6096Img from "../assets/denah-type-60-96.png";
+import denah6096Img from "../assets/denah-type-60-116.png";
 import denah4572Img from "../assets/denah-type-45-75.png";
 import denah3672Img from "../assets/denah-type-36-72.png";
 import denahPerumahanImg from "../assets/denah-holland-village.png";
