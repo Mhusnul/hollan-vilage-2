@@ -1,102 +1,63 @@
 import React from "react";
-import { company, project, marketing } from "../../data/config";
+import { company, project, marketing, houseTypes } from "../../data/config";
 import {
-  Facebook,
-  Twitter,
   Instagram,
   MessageCircle,
   ArrowUp,
   MapPin,
   Phone,
   Mail,
+  Trees,
 } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-[#051C14] text-emerald-100/80 border-t border-emerald-800/30 relative">
       {/* Main Footer Content */}
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src={company.logo}
-                alt="Logo"
-                className="h-12 w-12 object-contain rounded-lg"
-              />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+          {/* Brand & Developer Info */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="flex items-center gap-3.5">
+              <div className="p-1 bg-white rounded-xl">
+                <img
+                  src={company.logo}
+                  alt={company.companyNameShort}
+                  className="h-11 w-11 object-contain rounded-lg"
+                />
+              </div>
               <div>
-                <h3 className="text-white font-bold text-lg">
+                <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#E2B170]">
+                  {company.name}
+                </p>
+                <h3 className="font-serif-display text-white font-bold text-xl">
                   {company.companyNameShort}
                 </h3>
-                <p className="text-xs text-slate-400">{company.tagline}</p>
               </div>
             </div>
-            <p className="text-sm text-slate-400 mb-4 leading-relaxed">
+
+            <p className="text-sm text-emerald-100/75 leading-relaxed">
               {company.description}
             </p>
-            <p className="text-xs text-slate-500">
-              Berdiri sejak tahun {company.yearEstablished}
-            </p>
+
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/8 border border-white/10 text-xs text-[#E2B170]">
+              <Trees size={14} />
+              <span>Modern Tropical & Green Living • Sukabumi</span>
+            </div>
           </div>
 
-          {/* Project Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Proyek Kami</h4>
-            <ul className="space-y-3 text-sm">
-              <li>
-                <a
-                  href="#about"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
-                >
-                  {project.name}
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#houses"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
-                >
-                  Tipe Rumah
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#facilities"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
-                >
-                  Fasilitas
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#gallery"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
-                >
-                  Galeri Foto
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#pricing"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
-                >
-                  Harga & Promosi
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Menu Utama</h4>
-            <ul className="space-y-3 text-sm">
+          {/* Navigation Links */}
+          <div className="lg:col-span-2">
+            <h4 className="text-white font-bold mb-4 text-xs uppercase tracking-[0.18em]">
+              Navigasi
+            </h4>
+            <ul className="space-y-2.5 text-sm">
               <li>
                 <a
                   href="#home"
-                  className="text-slate-400 hover:text-gray-200 transition-colors font-medium"
+                  className="hover:text-[#E2B170] transition-colors"
                 >
                   Beranda
                 </a>
@@ -104,164 +65,184 @@ export default function Footer() {
               <li>
                 <a
                   href="#about"
-                  className="text-slate-400 hover:text-gray-300 transition-colors font-medium"
+                  className="hover:text-[#E2B170] transition-colors"
                 >
                   Tentang Kami
                 </a>
               </li>
               <li>
                 <a
+                  href="#denah"
+                  className="hover:text-[#E2B170] transition-colors"
+                >
+                  Masterplan & Denah
+                </a>
+              </li>
+              <li>
+                <a
                   href="#advantages"
-                  className="text-slate-400 hover:text-gray-300 transition-colors font-medium"
+                  className="hover:text-[#E2B170] transition-colors"
                 >
                   Keunggulan Lokasi
                 </a>
               </li>
               <li>
                 <a
-                  href="#contact"
-                  className="text-slate-400 hover:text-gray-300 transition-colors font-medium"
+                  href="#facilities"
+                  className="hover:text-[#E2B170] transition-colors"
                 >
-                  Hubungi Kami
+                  Fasilitas Cluster
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  className="hover:text-[#E2B170] transition-colors"
+                >
+                  Galeri Foto
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* House Types Links */}
+          <div className="lg:col-span-3">
+            <h4 className="text-white font-bold mb-4 text-xs uppercase tracking-[0.18em]">
+              Pilihan Tipe Unit
+            </h4>
+            <ul className="space-y-2.5 text-sm">
+              {houseTypes.map((unit) => (
+                <li key={unit.id}>
+                  <a
+                    href="#houses"
+                    className="hover:text-[#E2B170] transition-colors flex items-center justify-between"
+                  >
+                    <span>
+                      {unit.name} (LB {unit.buildingArea})
+                    </span>
+                    <span className="text-xs font-semibold text-[#E2B170]">
+                      {unit.priceStartFrom.replace(".000.000", " Jt")}
+                    </span>
+                  </a>
+                </li>
+              ))}
+              <li className="pt-2">
+                <a
+                  href="#pricing"
+                  className="text-xs font-bold text-[#E2B170] hover:underline uppercase tracking-wider"
+                >
+                  Lihat Promo & Tabel Harga →
                 </a>
               </li>
             </ul>
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Kontak</h4>
-            <div className="space-y-4 text-sm">
-              <div className="flex gap-3">
-                <Phone
-                  size={18}
-                  className="text-gray-300 flex-shrink-0 mt-0.5"
-                />
-                <div>
-                  <p className="text-slate-400 text-xs mb-1">Telepon</p>
-                  <a
-                    href={`tel:${marketing.phone}`}
-                    className="text-white font-medium hover:text-gray-300 transition-colors break-all"
-                  >
-                    {marketing.phone}
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <Mail
-                  size={18}
-                  className="text-gray-300 flex-shrink-0 mt-0.5"
-                />
-                <div>
-                  <p className="text-slate-400 text-xs mb-1">Email</p>
-                  <a
-                    href={`mailto:${marketing.email}`}
-                    className="text-white font-medium hover:text-gray-300 transition-colors break-all"
-                  >
-                    {marketing.email}
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-3">
+          <div className="lg:col-span-3">
+            <h4 className="text-white font-bold mb-4 text-xs uppercase tracking-[0.18em]">
+              Kantor Pemasaran
+            </h4>
+            <div className="space-y-3.5 text-sm">
+              <div className="flex items-start gap-3">
                 <MapPin
-                  size={18}
-                  className="text-gray-300 flex-shrink-0 mt-0.5"
+                  size={17}
+                  className="text-[#E2B170] shrink-0 mt-0.5"
                 />
-                <div>
-                  <p className="text-slate-400 text-xs mb-1">Alamat</p>
-                  <p className="text-white font-medium text-xs leading-relaxed">
-                    {marketing.officeAddress}
-                  </p>
-                </div>
+                <p className="text-xs leading-relaxed text-emerald-100/80">
+                  {project.fullAddress}
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone size={17} className="text-[#E2B170] shrink-0" />
+                <a
+                  href={`tel:${marketing.phone}`}
+                  className="text-white font-semibold hover:text-[#E2B170] transition-colors text-xs sm:text-sm"
+                >
+                  {marketing.phone} (Adiansyah Anwar)
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail size={17} className="text-[#E2B170] shrink-0" />
+                <a
+                  href={`mailto:${marketing.email}`}
+                  className="text-emerald-100/80 hover:text-[#E2B170] transition-colors text-xs break-all"
+                >
+                  {marketing.email}
+                </a>
+              </div>
+
+              {/* Social Buttons */}
+              <div className="flex items-center gap-3 pt-2">
+                <a
+                  href={`https://instagram.com/${marketing.instagram.replace(
+                    "@",
+                    ""
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#C58F4B] flex items-center justify-center transition-colors text-white"
+                  title="Instagram"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={18} />
+                </a>
+                <a
+                  href={marketing.agents[0].whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[#25D366] flex items-center justify-center transition-colors text-white"
+                  title="WhatsApp"
+                  aria-label="WhatsApp"
+                >
+                  <MessageCircle size={18} />
+                </a>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-slate-700 my-12" />
-
-        {/* Bottom Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-sm text-slate-400 mb-8">
-          <p className="mb-4 md:mb-0">
-            © {currentYear} {company.companyNameShort}. Semua hak dilindungi. |{" "}
-            {company.name}
+        {/* Bottom Copyright */}
+        <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-emerald-200/60">
+          <p>
+            © {currentYear} <strong>{company.companyNameShort}</strong> —{" "}
+            {company.name}. Hak cipta dilindungi.
           </p>
           <div className="flex gap-6">
-            <a
-              href="#"
-              className="hover:text-gray-300 transition-colors font-medium"
-            >
-              Privacy Policy
+            <a href="#home" className="hover:text-white transition-colors">
+              Beranda
             </a>
-            <a
-              href="#"
-              className="hover:text-gray-300 transition-colors font-medium"
-            >
-              Syarat & Ketentuan
+            <a href="#pricing" className="hover:text-white transition-colors">
+              Syarat & Ketentuan Promo
             </a>
-            <a
-              href="#"
-              className="hover:text-gray-300 transition-colors font-medium"
-            >
-              Peta Situs
+            <a href="#contact" className="hover:text-white transition-colors">
+              Kontak Resmi
             </a>
           </div>
         </div>
-
-        {/* Social Links */}
-        <div className="flex justify-center gap-4">
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
-            title="Facebook"
-            aria-label="Facebook"
-          >
-            <Facebook size={20} />
-          </a>
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
-            title="Twitter"
-            aria-label="Twitter"
-          >
-            <Twitter size={20} />
-          </a>
-          <a
-            href={`https://instagram.com/${marketing.instagram.replace("@", "")}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
-            title="Instagram"
-            aria-label="Instagram"
-          >
-            <Instagram size={20} />
-          </a>
-          <a
-            href={marketing.agents[0].whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="w-11 h-11 rounded-full bg-slate-800 hover:bg-gray-700 flex items-center justify-center transition-smooth text-white shadow-md"
-            title="WhatsApp"
-            aria-label="WhatsApp"
-          >
-            <MessageCircle size={20} />
-          </a>
-        </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-black transition-smooth hover:scale-110 z-40"
-        aria-label="Scroll to top"
-      >
-        <ArrowUp size={20} />
-      </button>
+      {/* Floating Action Buttons (WhatsApp + Scroll to Top) */}
+      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="w-11 h-11 bg-[#07261C]/90 hover:bg-[#07261C] text-white border border-white/15 rounded-full flex items-center justify-center shadow-lg transition-all hover:scale-105 cursor-pointer"
+          aria-label="Scroll to top"
+          title="Kembali ke atas"
+        >
+          <ArrowUp size={18} />
+        </button>
+
+        <a
+          href={marketing.agents[0].whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#25D366] hover:bg-[#1EBE5B] text-white p-3.5 sm:px-5 sm:py-3.5 rounded-full shadow-2xl hover:scale-105 transition-all flex items-center gap-2.5 font-semibold text-sm"
+          aria-label="Chat Marketing via WhatsApp"
+        >
+          <MessageCircle size={20} />
+          <span className="hidden sm:inline">Chat Marketing</span>
+        </a>
+      </div>
     </footer>
   );
 }

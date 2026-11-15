@@ -8,7 +8,6 @@ export default function Card({
   price,
   specs,
   onDetailsClick,
-  variant = "default",
 }) {
   return (
     <div className="group bg-white rounded-xl overflow-hidden border border-slate-200 hover:border-slate-300 transition-smooth hover:shadow-lg">

@@ -1,108 +1,130 @@
-import React, { useState } from "react";
-import { company } from "../../data/config";
-import Button from "../common/Button";
+import React, { useState, useEffect } from "react";
+import { company, marketing } from "../../data/config";
+import { Menu, X, PhoneCall } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Ringkas menjadi 5 menu utama agar bersih, lega, dan tidak menumpuk
   const menuItems = [
     { label: "Beranda", href: "#home" },
-    { label: "Tentang Kami", href: "#about" },
     { label: "Tipe Rumah", href: "#houses" },
+    { label: "Masterplan", href: "#denah" },
     { label: "Fasilitas", href: "#facilities" },
-    { label: "Galeri", href: "#gallery" },
-    { label: "Kontak", href: "#contact" },
+    { label: "Harga & Promo", href: "#pricing" },
   ];
 
+  const handleContactClick = () => {
+    window.open(marketing.agents[0].whatsapp, "_blank");
+  };
+
   return (
-    <header className="fixed w-full top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-      <nav className="w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo & Company Name */}
-          <a href="#home" className="flex items-center gap-3 group">
-            <img
-              src={company.logo}
-              alt="Logo"
-              className="h-12 w-12 object-contain group-hover:scale-110 transition-smooth rounded-lg"
-            />
-            <div>
-              <h1 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors">
-                {company.companyNameShort}
-              </h1>
-              <p className="text-xs text-gray-600">{company.tagline}</p>
+    <header
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-[#FAF8F5]/95 backdrop-blur-xl shadow-md shadow-emerald-950/5 border-b border-emerald-900/10 py-2.5"
+          : "bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/70 py-3.5"
+      }`}
+    >
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center gap-4">
+          {/* Logo & Brand Name */}
+          <a href="#home" className="flex items-center gap-3 group shrink-0">
+            <div className="p-1 rounded-xl bg-white shadow-sm border border-emerald-900/10 overflow-hidden shrink-0">
+              <img
+                src={company.logo}
+                alt={company.companyNameShort}
+                className="h-9 w-9 sm:h-10 sm:w-10 object-contain group-hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-800 whitespace-nowrap">
+                {company.name}
+              </span>
+              <span className="font-serif-display text-base sm:text-lg font-bold text-[#0F291E] tracking-tight leading-tight whitespace-nowrap">
+                Holland Village{" "}
+                <span className="text-[#C58F4B] font-normal italic text-sm sm:text-base">
+                  Sukabumi
+                </span>
+              </span>
             </div>
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center gap-1">
+          {/* Desktop Menu - Ringkas & Rapi */}
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-smooth font-medium text-sm"
+                className="px-3.5 py-2 text-[#1C2826]/80 hover:text-emerald-900 hover:bg-emerald-900/6 rounded-lg transition-all font-medium text-sm whitespace-nowrap"
               >
                 {item.label}
               </a>
             ))}
           </div>
 
-          {/* CTA Button & Mobile Menu */}
-          <div className="flex items-center gap-3">
-            <Button
-              size="sm"
-              variant="primary"
-              className="!hidden md:!block sm:inline-flex bg-gray-900 hover:bg-gray-800 text-white"
+          {/* Single CTA Button & Mobile Menu Toggle */}
+          <div className="flex items-center gap-2.5 shrink-0">
+            <button
+              onClick={handleContactClick}
+              className="hidden sm:inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold bg-emerald-900 text-white hover:bg-emerald-800 shadow-sm shadow-emerald-950/15 transition-all cursor-pointer active:scale-95 whitespace-nowrap"
             >
-              Temukan Rumah
-            </Button>
+              <PhoneCall size={15} />
+              <span>Hubungi Kami</span>
+            </button>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden w-10 h-10 rounded-lg hover:bg-gray-100 flex items-center justify-center transition-smooth"
+              className="lg:hidden w-10 h-10 rounded-xl bg-emerald-950/5 hover:bg-emerald-950/10 flex items-center justify-center text-emerald-950 transition-colors"
               aria-label="Toggle menu"
             >
-              <svg
-                className={`w-6 h-6 text-gray-700 transition-transform duration-300 ${
-                  isMenuOpen ? "rotate-90" : ""
-                }`}
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                {isMenuOpen ? (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                ) : (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                )}
-              </svg>
+              {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Drawer */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-4 border-t border-gray-200 space-y-2 animate-fade-in">
+          <div className="lg:hidden mt-3 pt-3 pb-4 border-t border-emerald-900/10 space-y-1 animate-fade-in">
             {menuItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-smooth font-medium"
+                className="block px-3.5 py-2.5 text-stone-700 hover:text-emerald-950 hover:bg-emerald-900/8 rounded-xl transition-colors font-medium text-sm"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
+            <a
+              href="#contact"
+              className="block px-3.5 py-2.5 text-stone-700 hover:text-emerald-950 hover:bg-emerald-900/8 rounded-xl transition-colors font-medium text-sm"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Lokasi & Kontak
+            </a>
+            <div className="pt-2 mt-2 border-t border-stone-200/80">
+              <button
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  handleContactClick();
+                }}
+                className="w-full py-3 px-4 rounded-xl bg-emerald-900 text-white font-semibold text-sm flex items-center justify-center gap-2 shadow-md"
+              >
+                <PhoneCall size={16} />
+                Konsultasi via WhatsApp
+              </button>
+            </div>
           </div>
         )}
       </nav>

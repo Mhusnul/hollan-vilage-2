@@ -4,62 +4,57 @@ import SectionTitle from "../common/SectionTitle";
 import { getIconComponent } from "../../utils/iconUtils";
 
 export default function Facilities() {
-  const mainFacilities = facilities.slice(0, 3);
-  const otherFacilities = facilities.slice(3);
-
   return (
-    <section id="facilities" className="py-4 bg-gray-50">
-      <div className="w-full px-4 sm:px-6 lg:px-8">
+    <section
+      id="facilities"
+      className="py-20 md:py-28 bg-[#F3EFE6]/60 relative overflow-hidden"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          title="Fasilitas"
-          subtitle="Dirancang untuk kenyamanan, keamanan, dan kualitas hidup terbaik"
+          badge="Fasilitas Internal Cluster"
+          title="Kenyamanan Hidup Modern di Lingkungan Hijau"
+          subtitle="Beragam fasilitas penunjang gaya hidup sehat, aman, dan harmonis yang dirancang eksklusif bagi seluruh penghuni Holland Village."
         />
-        {/* SECONDARY LIST (MINIMAL) */}
-        <div className="mt-5">
-          <div className="flex flex-wrap justify-center gap-3">
-            {otherFacilities.map((facility) => {
-              const Icon = getIconComponent(facility.icon);
 
-              return (
-                <div
-                  key={facility.id}
-                  className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-sm text-gray-700 hover:bg-gray-100 transition"
-                >
-                  {Icon && <Icon size={16} />}
-                  {facility.name}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-        {/* MAIN HIGHLIGHT (BIG IMAGE) */}
-        <div className="grid lg:grid-cols-3 gap-6 mt-16">
-          {mainFacilities.map((facility) => {
+        {/* All 6 Facilities Showcase Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          {facilities.map((facility) => {
             const Icon = getIconComponent(facility.icon);
 
             return (
               <div
                 key={facility.id}
-                className="relative group rounded-2xl overflow-hidden h-[300px]"
+                className="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-emerald-900/10 transition-all duration-300 hover:-translate-y-1.5 flex flex-col"
               >
-                <img
-                  src={facility.image}
-                  alt={facility.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
+                {/* Image Wrapper */}
+                <div className="relative h-56 overflow-hidden">
+                  <img
+                    src={facility.image}
+                    alt={facility.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#07261C]/75 via-transparent to-transparent" />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition" />
-
-                {/* Content */}
-                <div className="absolute bottom-0 p-6 text-white">
-                  <div className="flex items-center gap-3 mb-2">
-                    {Icon && <Icon size={20} />}
-                    <h3 className="text-lg font-semibold">{facility.name}</h3>
+                  {/* Floating Icon Badge */}
+                  <div className="absolute bottom-4 left-5 flex items-center gap-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-[#C58F4B] text-white flex items-center justify-center shadow-lg">
+                      {Icon && <Icon size={20} />}
+                    </div>
+                    <h3 className="font-serif-display text-xl font-bold text-white drop-shadow">
+                      {facility.name}
+                    </h3>
                   </div>
-                  <p className="text-sm text-gray-200 line-clamp-2">
+                </div>
+
+                {/* Card Body */}
+                <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                  <p className="text-stone-600 text-sm leading-relaxed">
                     {facility.description}
                   </p>
+                  <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-semibold text-emerald-800">
+                    <span>Fasilitas Penghuni</span>
+                    <span className="text-[#C58F4B]">Eksklusif • 24/7</span>
+                  </div>
                 </div>
               </div>
             );

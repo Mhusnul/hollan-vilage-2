@@ -13,9 +13,9 @@ import Footer from "../components/sections/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FAF8F5] text-[#1C2826]">
       <Header />
-      <main className="pt-16 md:pt-20">
+      <main className="pt-16">
         <Hero />
         <About />
         <HouseTypes />
