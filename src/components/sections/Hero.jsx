@@ -9,10 +9,16 @@ import {
   PhoneCall,
 } from "lucide-react";
 import heroImg from "../../assets/bg1.jpeg";
-import { company, project, marketing } from "../../data/config";
+import { company, project } from "../../data/config";
+import { useMarketingSettings } from "../../utils/marketingService";
 
-export default function Hero() {
+export default function Hero({ onNavigate }) {
+  const { marketing } = useMarketingSettings();
   const handleExploreProperties = () => {
+    if (onNavigate) {
+      onNavigate("/tipe-rumah");
+      return;
+    }
     const element = document.getElementById("houses");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -176,7 +182,13 @@ export default function Hero() {
                   Legalitas Terjamin & Bebas Banjir
                 </span>
                 <a
-                  href="#pricing"
+                  href="/harga-promo"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate("/harga-promo");
+                    }
+                  }}
                   className="font-bold text-[#E2B170] hover:underline"
                 >
                   Lihat Detail →

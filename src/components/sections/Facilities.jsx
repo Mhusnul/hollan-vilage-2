@@ -1,9 +1,10 @@
 import React from "react";
-import { facilities } from "../../data/config";
+import { useFacilities } from "../../utils/galleryFacilitiesService";
 import SectionTitle from "../common/SectionTitle";
 import { getIconComponent } from "../../utils/iconUtils";
 
 export default function Facilities() {
+  const { facilities } = useFacilities();
   return (
     <section
       id="facilities"

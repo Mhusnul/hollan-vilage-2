@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { denahPerumahan } from "../../data/config";
+import { useUnitBlocks } from "../../utils/unitBlocksService";
 import SectionTitle from "../common/SectionTitle";
 import {
   Map,
@@ -12,6 +13,7 @@ import {
 } from "lucide-react";
 
 export default function Denah() {
+  const { unitBlocks } = useUnitBlocks();
   const [isZoomOpen, setIsZoomOpen] = useState(false);
   const [selectedTypeFilter, setSelectedTypeFilter] = useState("ALL");
 
@@ -19,10 +21,14 @@ export default function Denah() {
 
   const filteredUnits =
     selectedTypeFilter === "ALL"
-      ? denahPerumahan.unitDetails
-      : denahPerumahan.unitDetails.filter(
-          (u) => u.landArea === selectedTypeFilter
-        );
+      ? unitBlocks
+      : unitBlocks.filter((u) => u.landArea === selectedTypeFilter);
+
+  const totalCapacity = unitBlocks.reduce((sum, u) => sum + (u.unit || 0), 0);
+  const totalAvailable = unitBlocks.reduce(
+    (sum, u) => sum + (u.availableUnits ?? u.unit ?? 0),
+    0
+  );
 
   return (
     <section
@@ -254,20 +260,22 @@ export default function Denah() {
                         Tipe (LB/LT)
                       </th>
                       <th className="px-4 py-3.5 text-center font-semibold text-xs uppercase tracking-wider">
-                        Jumlah Unit
+                        Tersedia / Total
                       </th>
                       <th className="px-4 py-3.5 text-right font-semibold text-xs uppercase tracking-wider">
-                        Total Luas (m²)
+                        Status
                       </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-stone-200/80">
-                    {filteredUnits.map((unit) => (
+                    {filteredUnits.map((unit, idx) => (
                       <tr
-                        key={unit.no}
+                        key={unit.id || unit.no || idx}
                         className="hover:bg-emerald-900/4 transition-colors"
                       >
-                        <td className="px-4 py-3 text-stone-500">{unit.no}</td>
+                        <td className="px-4 py-3 text-stone-500">
+                          {idx + 1}
+                        </td>
                         <td className="px-4 py-3">
                           <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-emerald-900/10 text-emerald-950 font-bold text-xs">
                             {unit.block}
@@ -278,11 +286,21 @@ export default function Denah() {
                         </td>
                         <td className="px-4 py-3 text-center">
                           <span className="px-2.5 py-1 rounded-full bg-[#F3EFE6] text-stone-800 font-semibold text-xs">
-                            {unit.unit} Unit
+                            {unit.availableUnits ?? unit.unit} / {unit.unit} Unit
                           </span>
                         </td>
-                        <td className="px-4 py-3 text-right font-medium text-stone-700">
-                          {unit.luasUnit}
+                        <td className="px-4 py-3 text-right font-medium">
+                          <span
+                            className={`px-2.5 py-1 rounded-full text-[11px] font-bold ${
+                              unit.status === "Sold Out"
+                                ? "bg-red-100 text-red-700"
+                                : unit.status === "Terbatas"
+                                ? "bg-amber-100 text-amber-800"
+                                : "bg-emerald-100 text-emerald-800"
+                            }`}
+                          >
+                            {unit.status || "Tersedia"}
+                          </span>
                         </td>
                       </tr>
                     ))}
@@ -296,7 +314,7 @@ export default function Denah() {
                 Menampilkan <strong>{filteredUnits.length}</strong> kelompok blok
               </span>
               <span className="font-bold text-emerald-950">
-                Total Kapasitas Kawasan: 135 Unit Eksklusif
+                Tersedia {totalAvailable} dari {totalCapacity} Unit Eksklusif
               </span>
             </div>
           </div>

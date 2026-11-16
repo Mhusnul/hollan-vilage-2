@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import {
-  houseTypes,
   buildingSpecifications,
-  marketing,
 } from "../../data/config";
+import { useHouseTypes } from "../../utils/houseTypesService";
+import { useMarketingSettings } from "../../utils/marketingService";
 import {
   BedDouble,
   Bath,
@@ -19,10 +19,15 @@ import {
 } from "lucide-react";
 import SectionTitle from "../common/SectionTitle";
 
-export default function HouseTypes() {
-  const [activeType, setActiveType] = useState(houseTypes[0]);
+export default function HouseTypes({ onNavigate }) {
+  const { houseTypes } = useHouseTypes();
+  const { marketing } = useMarketingSettings();
+  const [selectedId, setSelectedId] = useState(null);
   const [viewMode, setViewMode] = useState("exterior"); // "exterior" | "floorplan"
   const [zoomImage, setZoomImage] = useState(null);
+
+  const activeType =
+    houseTypes.find((t) => t.id === selectedId) || houseTypes[0];
 
   const handleContactAgent = (unit) => {
     const text = encodeURIComponent(
@@ -32,6 +37,10 @@ export default function HouseTypes() {
   };
 
   const handleScheduleSurvey = () => {
+    if (onNavigate) {
+      onNavigate("/survey");
+      return;
+    }
     const element = document.getElementById("contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -69,7 +78,7 @@ export default function HouseTypes() {
               <button
                 key={type.id}
                 onClick={() => {
-                  setActiveType(type);
+                  setSelectedId(type.id);
                   setViewMode("exterior");
                 }}
                 className={`text-left p-4 sm:p-5 rounded-2xl transition-all duration-300 border cursor-pointer relative overflow-hidden ${

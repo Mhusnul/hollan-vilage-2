@@ -1,5 +1,7 @@
 import React from "react";
-import { pricing, houseTypes, marketing } from "../../data/config";
+import { useHouseTypes } from "../../utils/houseTypesService";
+import { usePricingSettings } from "../../utils/pricingService";
+import { useMarketingSettings } from "../../utils/marketingService";
 import SectionTitle from "../common/SectionTitle";
 import {
   CheckCircle2,
@@ -12,6 +14,10 @@ import {
 } from "lucide-react";
 
 export default function Pricing() {
+  const { houseTypes } = useHouseTypes();
+  const { pricingSettings: pricing } = usePricingSettings();
+  const { marketing } = useMarketingSettings();
+
   const handleContactForPromo = () => {
     const text = encodeURIComponent(
       "Halo Marketing Holland Village Sukabumi, saya ingin menanyakan detail Promo Free Biaya BPHTB/AJB/KPR dan simulasi cicilan KPR."
@@ -86,13 +92,13 @@ export default function Pricing() {
                 <div className="flex justify-between items-center">
                   <span className="text-emerald-100/80">Booking Fee</span>
                   <span className="font-bold text-[#E2B170]">
-                    Mulai Rp 1.000.000
+                    Mulai {pricing.bookingFeeStart}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-emerald-100/80">Biaya All-In</span>
                   <span className="font-bold text-[#E2B170]">
-                    Mulai Rp 2.500.000
+                    Mulai {pricing.allInStart}
                   </span>
                 </div>
                 <div className="flex justify-between items-center">
@@ -104,7 +110,7 @@ export default function Pricing() {
                 <div className="flex justify-between items-center">
                   <span className="text-emerald-100/80">Suku Bunga KPR</span>
                   <span className="font-bold text-white">
-                    5.99% Fixed 1 Tahun
+                    {pricing.kprInterestRate}
                   </span>
                 </div>
               </div>
@@ -276,13 +282,16 @@ export default function Pricing() {
               </p>
               <div className="bg-[#FAF8F5] p-4 rounded-2xl border border-emerald-900/15 space-y-1">
                 <p className="text-xs font-bold uppercase tracking-wider text-emerald-800">
-                  {marketing.bankTransfer.bank}
+                  {pricing.bankTransfer?.bank || marketing.bankTransfer.bank}
                 </p>
                 <p className="text-lg font-bold text-[#0F291E] tracking-wide">
-                  {marketing.bankTransfer.accountNumber}
+                  {pricing.bankTransfer?.accountNumber ||
+                    marketing.bankTransfer.accountNumber}
                 </p>
                 <p className="text-xs font-semibold text-stone-700">
-                  a.n. {marketing.bankTransfer.accountName}
+                  a.n.{" "}
+                  {pricing.bankTransfer?.accountName ||
+                    marketing.bankTransfer.accountName}
                 </p>
               </div>
             </div>

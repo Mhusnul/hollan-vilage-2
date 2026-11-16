@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import { marketing, houseTypes, project } from "../../data/config";
+import { project } from "../../data/config";
+import { useHouseTypes } from "../../utils/houseTypesService";
+import { submitInquiry } from "../../utils/inquiriesService";
+import { useMarketingSettings } from "../../utils/marketingService";
 import SectionTitle from "../common/SectionTitle";
 import {
   Phone,
@@ -14,6 +17,8 @@ import {
 } from "lucide-react";
 
 export default function ContactForm() {
+  const { houseTypes } = useHouseTypes();
+  const { marketing } = useMarketingSettings();
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -23,6 +28,8 @@ export default function ContactForm() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -32,41 +39,33 @@ export default function ContactForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setSubmitError("");
+    setIsSubmitting(true);
 
-    const message = `
-*INQUIRY & JADWAL SURVEY HOLLAND VILLAGE SUKABUMI*
+    try {
+      await submitInquiry(formData);
+      setIsSubmitted(true);
 
-📝 *Data Calon Pembeli:*
-• Nama: ${formData.name || "-"}
-• No. HP/WhatsApp: ${formData.phone || "-"}
-• Email: ${formData.email || "-"}
-• Tipe Unit Diminati: ${formData.houseType || "Belum ditentukan"}
-
-💬 *Pesan / Pertanyaan:*
-${formData.message || "Mohon informasi brosur, pricelist terbaru, dan jadwal survey lokasi."}
-
----
-Terima kasih! 🙏
-    `.trim();
-
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `${marketing.agents[0].whatsapp}?text=${encodedMessage}`;
-    window.open(whatsappUrl, "_blank");
-
-    setIsSubmitted(true);
-
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: "",
-        phone: "",
-        email: "",
-        houseType: "",
-        message: "",
-      });
-    }, 4000);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          houseType: "",
+          message: "",
+        });
+      }, 5000);
+    } catch (err) {
+      console.error("Failed to save inquiry to Supabase:", err);
+      setSubmitError(
+        "Maaf, terjadi kendala saat mengirim permintaan. Silakan coba lagi beberapa saat."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -204,14 +203,15 @@ Terima kasih! 🙏
           <div className="lg:col-span-7">
             <div className="bg-white rounded-3xl p-7 sm:p-10 border border-emerald-900/10 shadow-xl h-full flex flex-col justify-center">
               <span className="text-xs font-bold uppercase tracking-widest text-[#C58F4B] mb-1">
-                Respon Cepat via WhatsApp
+                Pendaftaran Survey & Brosur
               </span>
               <h3 className="font-serif-display text-2xl sm:text-3xl font-bold text-[#0F291E] mb-2">
                 Formulir Permintaan Brosur & Survey
               </h3>
               <p className="text-sm text-stone-600 mb-7">
-                Isi data singkat di bawah ini untuk terhubung langsung dengan
-                tim pemasaran resmi kami melalui WhatsApp.
+                Isi data singkat di bawah ini, tim pemasaran resmi kami akan
+                segera menghubungi Anda untuk konfirmasi jadwal survey dan
+                pengiriman brosur.
               </p>
 
               {isSubmitted ? (
@@ -223,12 +223,18 @@ Terima kasih! 🙏
                     Terima Kasih Atas Minat Anda!
                   </h4>
                   <p className="text-stone-600 text-sm sm:text-base max-w-md mx-auto">
-                    Anda telah diarahkan ke WhatsApp resmi Marketing Holland
-                    Village Sukabumi. Tim kami siap melayani konsultasi Anda.
+                    Permintaan brosur & jadwal survey Anda telah kami terima.
+                    Tim Marketing resmi Holland Village Sukabumi akan segera
+                    menghubungi Anda.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {submitError && (
+                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">
+                      {submitError}
+                    </div>
+                  )}
                   <div className="grid sm:grid-cols-2 gap-5">
                     {/* Name */}
                     <div>
@@ -320,10 +326,15 @@ Terima kasih! 🙏
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-4 px-6 bg-emerald-900 hover:bg-emerald-800 text-white font-semibold rounded-xl shadow-lg shadow-emerald-950/15 transition-all flex items-center justify-center gap-2.5 cursor-pointer active:scale-[0.99]"
+                      disabled={isSubmitting}
+                      className="w-full py-4 px-6 bg-emerald-900 hover:bg-emerald-800 disabled:bg-emerald-900/60 text-white font-semibold rounded-xl shadow-lg shadow-emerald-950/15 transition-all flex items-center justify-center gap-2.5 cursor-pointer active:scale-[0.99]"
                     >
                       <Send size={18} />
-                      <span>Kirim Permintaan via WhatsApp</span>
+                      <span>
+                        {isSubmitting
+                          ? "Mengirim Permintaan..."
+                          : "Kirim Permintaan Survey"}
+                      </span>
                     </button>
                   </div>
 

@@ -1,5 +1,7 @@
 import React from "react";
-import { company, project, marketing, houseTypes } from "../../data/config";
+import { company, project } from "../../data/config";
+import { useMarketingSettings } from "../../utils/marketingService";
+import { useHouseTypes } from "../../utils/houseTypesService";
 import {
   Instagram,
   MessageCircle,
@@ -10,8 +12,17 @@ import {
   Trees,
 } from "lucide-react";
 
-export default function Footer() {
+export default function Footer({ onNavigate }) {
+  const { marketing } = useMarketingSettings();
+  const { houseTypes } = useHouseTypes();
   const currentYear = new Date().getFullYear();
+
+  const handleLink = (e, path) => {
+    if (onNavigate) {
+      e.preventDefault();
+      onNavigate(path);
+    }
+  };
 
   return (
     <footer className="bg-[#051C14] text-emerald-100/80 border-t border-emerald-800/30 relative">
@@ -56,7 +67,8 @@ export default function Footer() {
             <ul className="space-y-2.5 text-sm">
               <li>
                 <a
-                  href="#home"
+                  href="/"
+                  onClick={(e) => handleLink(e, "/")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
                   Beranda
@@ -64,15 +76,17 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#about"
+                  href="/tipe-rumah"
+                  onClick={(e) => handleLink(e, "/tipe-rumah")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
-                  Tentang Kami
+                  Tipe Rumah
                 </a>
               </li>
               <li>
                 <a
-                  href="#denah"
+                  href="/masterplan"
+                  onClick={(e) => handleLink(e, "/masterplan")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
                   Masterplan & Denah
@@ -80,26 +94,29 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#advantages"
+                  href="/fasilitas"
+                  onClick={(e) => handleLink(e, "/fasilitas")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
-                  Keunggulan Lokasi
+                  Fasilitas & Galeri
                 </a>
               </li>
               <li>
                 <a
-                  href="#facilities"
+                  href="/harga-promo"
+                  onClick={(e) => handleLink(e, "/harga-promo")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
-                  Fasilitas Cluster
+                  Harga & Promo
                 </a>
               </li>
               <li>
                 <a
-                  href="#gallery"
+                  href="/survey"
+                  onClick={(e) => handleLink(e, "/survey")}
                   className="hover:text-[#E2B170] transition-colors"
                 >
-                  Galeri Foto
+                  Survey & Kontak
                 </a>
               </li>
             </ul>
@@ -114,7 +131,8 @@ export default function Footer() {
               {houseTypes.map((unit) => (
                 <li key={unit.id}>
                   <a
-                    href="#houses"
+                    href="/tipe-rumah"
+                    onClick={(e) => handleLink(e, "/tipe-rumah")}
                     className="hover:text-[#E2B170] transition-colors flex items-center justify-between"
                   >
                     <span>
@@ -128,7 +146,8 @@ export default function Footer() {
               ))}
               <li className="pt-2">
                 <a
-                  href="#pricing"
+                  href="/harga-promo"
+                  onClick={(e) => handleLink(e, "/harga-promo")}
                   className="text-xs font-bold text-[#E2B170] hover:underline uppercase tracking-wider"
                 >
                   Lihat Promo & Tabel Harga →

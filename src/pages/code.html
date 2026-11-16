@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Holland Village Sukabumi | Minimalist Luxury Living</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Inter:wght@300;400;500&amp;family=Montserrat:wght@500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Montserrat:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e5e2dd",
+                        "inverse-surface": "#213145",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#000000",
+                        "secondary": "#775a19",
+                        "secondary-fixed": "#ffdea5",
+                        "on-secondary-fixed-variant": "#5d4201",
+                        "outline-variant": "#c6c6cd",
+                        "tertiary": "#000000",
+                        "surface-container-highest": "#d3e4fe",
+                        "primary-container": "#131b2e",
+                        "on-primary-container": "#7c839b",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#858480",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-fixed-dim": "#c9c6c2",
+                        "tertiary-container": "#1c1c19",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#474743",
+                        "on-primary-fixed": "#131b2e",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#bec6e0",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface-variant": "#45464d",
+                        "secondary-fixed-dim": "#e9c176",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-container": "#fed488",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#565e74",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#261900",
+                        "background": "#f8f9ff",
+                        "on-background": "#0b1c30",
+                        "outline": "#76777d",
+                        "surface-container": "#e5eeff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#dae2fd",
+                        "on-tertiary-fixed": "#1c1c19",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-container": "#785a1a",
+                        "inverse-on-surface": "#eaf1ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "stack-md": "16px",
+                        "gutter": "32px",
+                        "margin-mobile": "20px",
+                        "stack-lg": "24px",
+                        "section-padding-mobile": "64px",
+                        "stack-sm": "8px",
+                        "section-padding-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "display-lg": ["Playfair Display"],
+                        "headline-sm": ["Playfair Display"],
+                        "headline-md": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "label-caps": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "display-lg-mobile": ["40px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0px 20px 40px rgba(15, 23, 42, 0.05);
+        }
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(11, 28, 48, 0.4), rgba(11, 28, 48, 0.8));
+        }
+        .nav-blur {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl border-b border-primary/10 shadow-sm">
+<nav class="flex justify-between items-center w-full px-6 md:px-gutter max-w-container-max mx-auto py-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-primary tracking-widest">PT. PUSPA AGRA PROPERTI</span>
+<span class="font-display-lg-mobile text-headline-sm font-bold text-primary">Holland Village</span>
+</div>
+<div class="hidden md:flex items-center space-gap-stack-lg gap-8">
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 font-body-md" href="#home">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#types">Housing Types</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#facilities">Facilities</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#location">Location</a>
+<a class="bg-primary text-on-primary px-6 py-2.5 rounded-lg font-label-caps text-label-caps hover:bg-primary-container transition-all active:scale-95" href="https://wa.me/628976297053">Contact Us</a>
+</div>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-24 overflow-hidden" id="home">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Modern Architecture" class="w-full h-full object-cover" data-alt="A cinematic, high-angle exterior shot of a luxury minimalist residential development in Sukabumi during the golden hour. The modern houses feature clean architectural lines, large glass windows, and a sophisticated palette of white and navy accents. The surrounding landscape is lush with manicured greenery and elegant palm trees under a warm, glowing sunset sky, evoking a sense of tranquil prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO11iB6CpOG_CHk273a5gId_ZR8m2qGCWp75PHxGzxzqPU9FNaFarrHtNV82RBImNRz7deOIpMGPzWUP9NLFjOvU9TcHMlWmuGrqUMOF_l7dGJgwIvsZ5oPU6_0CJ1hOBvv3PTIQbUmxEu2rGudbXxi7r5SKpwZt3eIN9gS5lsNU-NYEvJTiUwR6hsvIUduZConPHdjQI5o1TJ7H-1e8_IoPYeyAOgdQaXBPMMVLic5T3c0LTSp_Wu2U5DS0TtlCyHyGeus7Svz9E"/>
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 px-6 md:px-gutter max-w-container-max mx-auto w-full text-white">
+<div class="max-w-3xl space-y-stack-lg">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight">Impian Anda Menjadi Kenyataan</h1>
+<p class="font-body-lg text-body-lg max-w-xl opacity-90">
+                        Hadirkan kemewahan minimalis dalam hidup Anda. Hunian eksklusif dengan desain modern di pusat kota Sukabumi, menciptakan harmoni antara kenyamanan dan prestise.
+                    </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<a class="bg-secondary-container text-on-secondary-container px-8 py-4 rounded-lg font-label-caps text-label-caps flex items-center gap-2 hover:bg-secondary-fixed transition-all" href="#types">
+                            LIHAT UNIT <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+<a class="border border-white/30 backdrop-blur-md px-8 py-4 rounded-lg font-label-caps text-label-caps hover:bg-white/10 transition-all" href="#location">
+                            EKSPLORASI LOKASI
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Details (Bento-ish) -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop px-6 md:px-gutter max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-4 bg-surface-container p-12 flex flex-col justify-center">
+<h2 class="font-label-caps text-label-caps text-secondary mb-4">OUR PROJECT</h2>
+<h3 class="font-headline-md text-headline-md text-primary mb-6">Masterpiece di Jantung Sukabumi</h3>
+<p class="font-body-md text-on-surface-variant mb-8">
+                        Dikembangkan oleh PT. Puspa Agra Properti, Holland Village Sukabumi berdiri di atas lahan strategis Sindangpalay.
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">straighten</span>
+<div>
+<p class="font-label-caps text-label-caps">LUAS AREA</p>
+<p class="font-headline-sm text-headline-sm">21.000 M²</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">home</span>
+<div>
+<p class="font-label-caps text-label-caps">TOTAL UNIT</p>
+<p class="font-headline-sm text-headline-sm">135 UNIT</p>
+</div>
+</div>
+</div>
+</div>
+<div class="md:col-span-8 relative overflow-hidden h-[400px] md:h-auto">
+<img alt="Project Area" class="w-full h-full object-cover" data-alt="A wide-angle aerial view of a meticulously planned housing estate called Holland Village in Sukabumi. The layout shows orderly rows of elegant modern houses with white walls and dark grey roofs, separated by wide paved streets and dotted with green parks. The lighting is bright and clear morning light, highlighting the premium suburban atmosphere and the vast 21,000 square meter property." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAL_IxMdoP1dMl1XP1vmBqpSLzj2eY3lxMyIgf1Hw337USY6cNJ6gs87_m-8rvcSQbjj7a13Owk5IDr7h4LlpzGE_P6tUTdxbyOX1x32AMT9UJ4id5rzHryV24Qp_blbwRJUt_knnceAV2c2KQyOCijZuiK-Tt9qXtCIrCa0qFPoFi4qQkheDaoFpthXOHfylilfwxkKcWxvKGFnhQ4k_K906ZqGcINChkw39B12k4d4NTQQ4MPVHWfqFEUjcqrLxsnhjUOeXCjaRs"/>
+</div>
+</div>
+</section>
+<!-- Housing Types -->
+<section class="bg-surface-container-low py-section-padding-mobile md:py-section-padding-desktop" id="types">
+<div class="px-6 md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-label-caps text-label-caps text-secondary mb-2">PILIHAN UNIT</h2>
+<h3 class="font-headline-md text-headline-md text-primary">Tipe Hunian Eksklusif</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Type 60/116 -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="mb-6 h-48 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close-up of a premium Type 60 house at Holland Village Sukabumi, showcasing luxurious white masonry and minimalist architectural details. The house features a modern carport and a small, perfectly manicured front lawn. The image is bright with high-key lighting, emphasizing the clean, prestigious aesthetic of the property." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhk7MYown_O0LnKg_vK4Hp_RnKUEw14XQncAupStrA1ho4WZ6zPWmUWaASEx1RZk9IWnR13vHgLrNnTA4okvxCCkS_TxjOohTW9N5a9V9mLAj2aM4fW21JYkeyPkxuYj0s-sVw5zng_3JsJDo25EpzOuZp95e_KZYulwJmDkhOhlJBsmkGeBggszmAaMKfHKRifAcdLwsC4lyh_3mZQB-jr8q_nHwL3-ScHARqdmtqqwiQdciI5-h0IZ5umOMH2pdPmM2OrAksDLg"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Type 60/116</h4>
+<p class="text-secondary font-bold text-xl mb-4">Rp 759jt</p>
+<ul class="font-body-md text-on-surface-variant space-y-2 mb-8 flex-grow">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 3 Kamar Tidur</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 2 Kamar Mandi</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Luas Tanah 116m²</li>
+</ul>
+<button class="w-full py-3 bg-primary text-white font-label-caps text-label-caps hover:bg-primary-container transition-colors">DETAIL UNIT</button>
+</div>
+<!-- Type 60/96 -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="mb-6 h-48 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Elegant Type 60/96 residential unit with a modern facade, featuring navy blue trim and pristine white walls. The design is sleek and contemporary, situated in a quiet, sun-drenched suburban street in Sukabumi. The image captures the minimalist luxury theme with soft shadows and sharp architectural clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCX3xHh9vAflrARPRLWgHdDjNVZZgRnR2wMoQXOO9Sc_3pz5ncg3PYD26x58tGQByJ9-nF32Fl0-CI6AhM5BWvDmMoroDe11ak6_atNdKOXddwS5fBiM2rLnde7v5IfzX5laLgcnk_u4nzvEb2chMV228mbdaLjhhfiIFHyNN8mmP-G71vsLbP2JUdDCCu0sBnn5QGyar0y484xqTPBW_cHqYI1YBapfL-ZrSJZr0MpWcwagojAC-kZDwG2SW1X0_RbboIDdh9_s8"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Type 60/96</h4>
+<p class="text-secondary font-bold text-xl mb-4">Rp 659jt</p>
+<ul class="font-body-md text-on-surface-variant space-y-2 mb-8 flex-grow">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 3 Kamar Tidur</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 2 Kamar Mandi</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Luas Tanah 96m²</li>
+</ul>
+<button class="w-full py-3 bg-primary text-white font-label-caps text-label-caps hover:bg-primary-container transition-colors">DETAIL UNIT</button>
+</div>
+<!-- Type 45/72 -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="mb-6 h-48 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Modern compact Type 45 home with sophisticated minimalist design elements. The exterior features high-quality finishings, large windows for natural light, and a smart layout. Set against a clear blue sky, the house looks inviting and upscale, embodying the accessible prestige of Holland Village Sukabumi." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_oGBUSIvaE2ZBn55zg8QM5QR9oYcO0rl_6oLxEWqZQ5eI5NT9aEdN0adtr1vNbuSeZRzUM3veFcsRWIVyjAyQ4BK0VV8_dYzYF84v7nZEAMS4CFz1csLwID9JfPQlW-kZIvBkGzkKSB9zUEU63rMRf9nsUk_0J5eBQOOTGpxynvhKGyXheEoI17NbGsLPsNmaGio3sM2NvamVR8tU_myt8K2HCg_Fa9A8cO9M2h-4ZVCFhyFQ-ItTvF8iXPMhRYB34_5dygPQvZ0"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Type 45/72</h4>
+<p class="text-secondary font-bold text-xl mb-4">Rp 489jt</p>
+<ul class="font-body-md text-on-surface-variant space-y-2 mb-8 flex-grow">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 2 Kamar Tidur</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 1 Kamar Mandi</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Luas Tanah 72m²</li>
+</ul>
+<button class="w-full py-3 bg-primary text-white font-label-caps text-label-caps hover:bg-primary-container transition-colors">DETAIL UNIT</button>
+</div>
+<!-- Type 36/72 -->
+<div class="glass-card p-6 flex flex-col h-full">
+<div class="mb-6 h-48 bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Charming and efficient Type 36 unit in a modern residential complex. The house features a crisp white facade with minimalist grey accents and a small decorative garden. The lighting is bright and airy, showcasing a perfect home for young professionals or small families seeking luxury on a budget." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGv3UdtQPIgTsRbLfD442TwZOhhB-0F-0-p0LrFk7YzMFDpmpmCruxhVZDcqDT7mbFS2Pbjb9UekQekZMKak-2xfWdK82HVAWajyxRGOYZdMjg7iWf1ektRh75MfOdDYT-vR_REdh7Hbxce8BiCLGnW4mosPVwHIS8j5WRsEGNzuO74hKJm8JDuBRVuYjaAHTYlPCdn4fKlxzxELo1fdpgqtA4VliEU2_-_m26HIogi7RrP0de3otVJQtN_OgspU5voujosIXLau8"/>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-1">Type 36/72</h4>
+<p class="text-secondary font-bold text-xl mb-4">Rp 419jt</p>
+<ul class="font-body-md text-on-surface-variant space-y-2 mb-8 flex-grow">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 2 Kamar Tidur</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 1 Kamar Mandi</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Luas Tanah 72m²</li>
+</ul>
+<button class="w-full py-3 bg-primary text-white font-label-caps text-label-caps hover:bg-primary-container transition-colors">DETAIL UNIT</button>
+</div>
+</div>
+<!-- Technical Specs -->
+<div class="mt-16 p-8 border border-primary/5 bg-white/50 backdrop-blur-sm">
+<h4 class="font-label-caps text-label-caps text-primary mb-6 text-center">SPESIFIKASI TEKNIS PREMIUM</h4>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<p class="font-bold text-primary">Struktur</p>
+<p class="text-sm text-on-surface-variant">Beton Bertulang</p>
+</div>
+<div>
+<p class="font-bold text-primary">Dinding</p>
+<p class="text-sm text-on-surface-variant">Bata Ringan</p>
+</div>
+<div>
+<p class="font-bold text-primary">Atap</p>
+<p class="text-sm text-on-surface-variant">Genteng Keramik</p>
+</div>
+<div>
+<p class="font-bold text-primary">Lantai</p>
+<p class="text-sm text-on-surface-variant">Granit 60x60</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Facilities -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop" id="facilities">
+<div class="px-6 md:px-gutter max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div class="max-w-xl">
+<h2 class="font-label-caps text-label-caps text-secondary mb-2">FASILITAS</h2>
+<h3 class="font-headline-md text-headline-md text-primary">Kenyamanan Tanpa Batas dalam Genggaman Anda</h3>
+</div>
+<p class="font-body-md text-on-surface-variant max-w-sm">
+                        Kami menyediakan berbagai fasilitas pendukung untuk gaya hidup modern dan sehat bagi seluruh keluarga.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="glass-card p-8 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">verified_user</span>
+<h5 class="font-bold">Security 24 Jam</h5>
+</div>
+<div class="glass-card p-8 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">gate</span>
+<h5 class="font-bold">One Gate System</h5>
+</div>
+<div class="glass-card p-8 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">mosque</span>
+<h5 class="font-bold">Masjid</h5>
+</div>
+<div class="glass-card p-8 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">toys</span>
+<h5 class="font-bold">Taman Bermain</h5>
+</div>
+<div class="glass-card p-8 flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-4xl text-secondary mb-4">directions_run</span>
+<h5 class="font-bold">Jogging Track</h5>
+</div>
+</div>
+</div>
+</section>
+<!-- Connectivity/Advantage -->
+<section class="bg-primary text-white py-section-padding-mobile md:py-section-padding-desktop overflow-hidden relative" id="location">
+<div class="px-6 md:px-gutter max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="font-label-caps text-label-caps text-secondary-fixed mb-4">LOKASI STRATEGIS</h2>
+<h3 class="font-headline-md text-headline-md mb-8">Terhubung dengan Segala Kebutuhan Hidup</h3>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="bg-white/10 p-3 rounded-lg"><span class="material-symbols-outlined">shopping_cart</span></div>
+<div>
+<h4 class="font-bold text-lg">Indo Grosir</h4>
+<p class="opacity-70">Akses belanja bulanan yang mudah dan dekat.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-white/10 p-3 rounded-lg"><span class="material-symbols-outlined">local_hospital</span></div>
+<div>
+<h4 class="font-bold text-lg">Rumah Sakit (10 Menit)</h4>
+<p class="opacity-70">Layanan kesehatan terbaik hanya beberapa menit dari rumah.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-white/10 p-3 rounded-lg"><span class="material-symbols-outlined">school</span></div>
+<div>
+<h4 class="font-bold text-lg">IPB (3 Menit)</h4>
+<p class="opacity-70">Lokasi sangat dekat dengan institusi pendidikan ternama.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="bg-white/10 p-3 rounded-lg"><span class="material-symbols-outlined">commute</span></div>
+<div>
+<h4 class="font-bold text-lg">Terminal (5 Menit)</h4>
+<p class="opacity-70">Kemudahan transportasi antarkota bagi mobilitas Anda.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group">
+<div class="absolute -inset-4 bg-secondary/20 blur-3xl rounded-full"></div>
+<img alt="Map View" class="rounded-xl relative z-10 w-full h-[500px] object-cover" data-alt="A stylized, artistic overhead map view showing the strategic location of Holland Village Sukabumi. The map highlights key landmarks like Indo Grosir, IPB, and the local hospital with elegant gold pins. The aesthetic is clean and modern, using a dark navy and soft gold color scheme to represent the neighborhood's connectivity and accessibility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgSFnC4JnhbbVu3aaW9Y3iyuQk7EhTYMnGXXgjOIKpmtx2xzMF0Q2l_skAzpOOmW0lKXxOXUs8sMj8-Vp_pNf_6ou3n_bWtdFJVxyeUMXbsmKqCvdnH2JUGLb0WngN4m4dJV9E09SZlOlfuRdaI01cV2-vJ-7orSypZ8YPKNcvSt1sosgVrI7v7bum3Tm21bqJmV3bxszUjAl_jHXK-z7liszi-dZgWfz_7LEX5UhoRaN9t3WEXkrG-uiiY5IpqdljBw7YNvuZRDQ"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing & Promo -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop bg-surface-container-low">
+<div class="px-6 md:px-gutter max-w-container-max mx-auto text-center">
+<div class="inline-block px-4 py-2 bg-secondary-fixed text-on-secondary-fixed text-label-caps font-label-caps rounded-full mb-6">PROMO TERBATAS</div>
+<h3 class="font-headline-md text-headline-md text-primary mb-12">Penawaran Eksklusif Holland Village</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-10 border border-primary/5 shadow-lg">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-4">BOOKING FEE</h4>
+<p class="font-headline-md text-headline-md text-primary mb-6">Mulai Rp 1jt</p>
+<p class="text-on-surface-variant mb-8">Amankan unit impian Anda sekarang dengan biaya ringan.</p>
+<div class="h-1 w-full bg-secondary/10 mb-8"></div>
+<p class="text-sm font-bold text-secondary italic">Unit Terbatas!</p>
+</div>
+<div class="bg-primary text-white p-10 shadow-2xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4"><span class="material-symbols-outlined text-secondary-fixed">star</span></div>
+<h4 class="font-label-caps text-label-caps text-secondary-fixed mb-4">PAKET FREE</h4>
+<ul class="space-y-4 text-left font-body-md">
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed">check</span> FREE Biaya BPHTB</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed">check</span> FREE Biaya AJB</li>
+<li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-fixed">check</span> FREE Biaya KPR</li>
+</ul>
+<div class="mt-12">
+<p class="text-sm opacity-60">*Syarat &amp; Ketentuan Berlaku</p>
+</div>
+</div>
+<div class="bg-white p-10 border border-primary/5 shadow-lg">
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-4">SKEMA BAYAR</h4>
+<ul class="space-y-4 text-center font-body-md mb-8">
+<li class="font-bold text-primary">Cash Keras</li>
+<li class="font-bold text-primary">KPR Bunga 5.99%</li>
+<li class="font-bold text-primary">Cash Bertahap</li>
+</ul>
+<button class="w-full py-4 border-2 border-primary text-primary font-label-caps text-label-caps hover:bg-primary hover:text-white transition-all">HUBUNGI KAMI</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Gallery -->
+<section class="py-section-padding-mobile md:py-section-padding-desktop">
+<div class="px-6 md:px-gutter max-w-container-max mx-auto">
+<h3 class="font-headline-md text-headline-md text-primary mb-12 text-center">Galeri Proyek</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="High-end interior design of a living room in Holland Village Sukabumi, featuring minimalist furniture, large floor-to-ceiling windows, and elegant navy blue accents. The room is flooded with soft natural daylight, creating a peaceful and luxurious atmosphere that emphasizes open space and high-quality materials." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDha4PuiecSKTYl5_6rrkgjQD-X5bc5hvTgbbMyF4r0531SWPfhiYy7EolKqWF2yInl79g-WdBk8sCEiE9B9YhIxoZXt4T_0DUsOBf9obyqCzk1aQy_4fnleumvRiI_VBnU-fk5tX4k71vVP1Vg7ASJJesX8EhXIbxV18Oo3nL-C2jw1Zh1n1q3Dx0LirR1lvxVRLHH1V7vKLGXrNHYVTUpb6zFpmHICqMNPINi46NzMxm6732czi7Fqu5pqKTM7a0lmyFYtEphMzY"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A modern, minimalist kitchen area in a Holland Village residential unit, showing sleek white cabinetry, a marble-topped island, and high-end built-in appliances. The lighting is sophisticated, highlighting the clean textures and premium finishes of the contemporary Sukabumi home." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT86Lgikig15Qs8t5c2siBN1e69j8fawuv8i5kYaw9NT7tDDCbifplqIjwwokfU0dfNVl-o_5aDp9O_Lml254oRP7RMQpy_BlI6fN_dh1FC7pMOUL4nUWLwWDYtfnFQWvLGm-IEu4gE1q1fNkn-erd2F8gEglKKwWaCjjYT4_PS0Bg2JylRqgdRhY-y6U8C_A16mFXiaLdAZXCRKYFn6gwhk7NnugzWdCKLe5zk7_TtWnZDtFw9uPmHo8u5ylI26nQ5l-J23alpmU"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A serene master bedroom at Holland Village Sukabumi, designed with a minimalist luxury aesthetic. The room features soft neutral tones, plush bedding, and large windows looking out onto a green landscape. The morning sun creates a warm and inviting glow throughout the space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs7_DEih-DqYnkInw3PwOYGt20btKrUe8GZvIrYsD0DfKw_ssd1HbPlIVaTuVZhAirx5wHYieFK5G2SAcJgoNa9YR-u5uY9HNqJz0kqot3FJZlW_ilHaldoGoc7bZjsqqN8zpL7pbx5AK1vvvrnKB5G8wulLe83lAC_eaYYEFCeTOMoac8fg2jxmYL25c8z45XXX1CxgNxr1kejJ9qOBGrYl4ZG73DGWQjHovU9MedY7iYMsxj5Tdj3_aCl9vmmP4_uIdFVp8SOhg"/>
+</div>
+<div class="aspect-square bg-surface-container overflow-hidden rounded-lg group cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="The exterior courtyard and garden of a Holland Village home, showcasing elegant landscaping, a small stone path, and vibrant tropical plants. The architectural lines of the house frame the garden beautifully under a clear afternoon sky, reflecting a tranquil and private sanctuary." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDL5PxI7Rj6Xw8S3-09oTKKOaHr_0MTYHmZUSmJzcN0SlGNj45Fumld7uxzCZhafYZFoYXC_rokmTPSDKdfd8dPfdd7GfO0AVlogswbbngd9Yp9LQGzW91lvhijokMyHhVQsXND2BWsIk8_v5JuQc53wt1blek024UvTbyGaKWvqfgphIicI3Elg1HOwmRY_Vg60kMA8rIt0aavyNQ7BJ3z715flJvpFm2XmehFQvYxcWClnVWN3dizS2CT76frfyAH2mRaj2gF40s"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container border-t border-primary/5">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-stack-lg px-6 md:px-gutter py-section-padding-mobile md:py-section-padding-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-lg text-headline-md font-bold text-primary">Holland Village</span>
+<p class="mt-4 font-body-md text-on-surface-variant">
+                    Living the minimalist luxury dream in the heart of Sukabumi.
+                </p>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">MARKETING OFFICE</h5>
+<p class="font-body-md text-on-surface-variant mb-2">Sindangpalay, Kec. Cibeureum</p>
+<p class="font-body-md text-on-surface-variant mb-2">Kota Sukabumi, Jawa Barat</p>
+<p class="font-body-md text-on-surface-variant">09.00 - 18.00 (Setiap Hari)</p>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">CONTACT</h5>
+<p class="font-body-md text-primary font-bold mb-2">Adiansyah Anwar</p>
+<a class="font-body-md text-on-surface-variant hover:text-secondary block mb-2 transition-colors" href="tel:+628976297053">+62 897 6297 053</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="mailto:info@puspaagraproperti.com">info@puspaagraproperti.com</a>
+</div>
+<div>
+<h5 class="font-label-caps text-label-caps text-primary mb-6">LINKS</h5>
+<nav class="flex flex-col gap-3">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Sitemap</a>
+</nav>
+</div>
+</div>
+<div class="border-t border-primary/5 py-8 text-center">
+<p class="font-body-md text-on-surface-variant opacity-60">
+                © 2024 Holland Village Sukabumi. Minimalist Luxury Living. PT. Puspa Agra Properti.
+            </p>
+</div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform active:scale-95 flex items-center gap-2 group" href="https://wa.me/628976297053" target="_blank">
+<span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 font-label-caps text-label-caps whitespace-nowrap px-0 group-hover:px-2">Chat Marketing</span>
+<svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.313 1.592 5.448 0 9.886-4.438 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884 0 2.225.569 3.961 1.694 5.642l-.999 3.65 3.873-.891zm11.304-7.354c-.118-.197-.434-.316-.91-.553s-2.81-1.387-3.244-1.544-.75-.237-1.065.237-1.223 1.544-1.499 1.861-.553.355-1.027.118-2.002-.737-3.817-2.354c-1.41-1.257-2.362-2.81-2.639-3.285s-.03-.733.208-.968c.213-.213.474-.553.711-.829s.316-.474.474-.789.079-.592-.04-.829-.316-1.544-1.065-1.544-1.065.316-1.341.671-.829.868-.829 2.112 1.544 4.144 1.544 6.78c.033 1.342.33 2.612.822 3.766 1.053 2.474 3.013 4.295 5.513 5.487.72.342 1.487.618 2.276.828.947.253 1.911.378 2.875.378 1.137 0 2.257-.171 3.335-.513 1.145-.316 1.894-1.065 2.131-1.544s.316-1.544.158-1.816z"></path>
+</svg>
+</a>
+</body></html>

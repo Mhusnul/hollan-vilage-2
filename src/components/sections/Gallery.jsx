@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { gallery } from "../../data/config";
+import { useGalleryItems } from "../../utils/galleryFacilitiesService";
 import SectionTitle from "../common/SectionTitle";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Gallery() {
+  const { gallery } = useGalleryItems();
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [filter, setFilter] = useState("all");
   const [showMore, setShowMore] = useState(false);
