@@ -11,9 +11,11 @@ import {
 import heroImg from "../../assets/bg1.jpeg";
 import { company, project } from "../../data/config";
 import { useMarketingSettings } from "../../utils/marketingService";
+import { usePricingSettings } from "../../utils/pricingService";
 
 export default function Hero({ onNavigate }) {
   const { marketing } = useMarketingSettings();
+  const { pricingSettings } = usePricingSettings();
   const handleExploreProperties = () => {
     if (onNavigate) {
       onNavigate("/tipe-rumah");
@@ -30,9 +32,9 @@ export default function Hero({ onNavigate }) {
   };
 
   const highlights = [
-    "FREE Biaya BPHTB, AJB & KPR",
-    "Booking Fee Mulai Rp 1 Juta",
-    "Bunga KPR 5.99% Fixed 1 Tahun",
+    ...(pricingSettings.promo?.length > 0 ? pricingSettings.promo : []),
+    `Booking Fee Mulai ${pricingSettings.bookingFeeStart}`,
+    `Bunga KPR ${pricingSettings.kprInterestRate}`,
   ];
 
   return (
@@ -135,8 +137,8 @@ export default function Hero({ onNavigate }) {
                 Harga Perdana Mulai Dari
               </p>
               <div className="flex items-baseline gap-2 mb-4">
-                <span className="font-serif-display text-4xl sm:text-5xl font-bold text-white">
-                  Rp 419 Juta
+                <span className="font-serif-display text-3xl sm:text-4xl font-bold text-white">
+                  {pricingSettings.startingPrice}
                 </span>
                 <span className="text-xs text-emerald-200/80">
                   (Type 36/72)
@@ -171,7 +173,7 @@ export default function Hero({ onNavigate }) {
                 <div className="bg-emerald-950/50 border border-white/10 rounded-2xl p-4">
                   <p className="text-2xl font-bold text-[#E2B170]">All-In</p>
                   <p className="text-xs text-emerald-100/80 mt-0.5">
-                    Mulai Rp 2,5 Juta
+                    Mulai {pricingSettings.allInStart}
                   </p>
                 </div>
               </div>
