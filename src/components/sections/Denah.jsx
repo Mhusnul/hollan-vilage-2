@@ -43,9 +43,9 @@ export default function Denah() {
         />
 
         {/* Top Masterplan Showcase */}
-        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16">
           {/* Masterplan Image Card */}
-          <div className="lg:col-span-7">
+          <div className="min-w-0 lg:col-span-7">
             <div
               onClick={() => setIsZoomOpen(true)}
               className="relative rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-white group cursor-pointer"
@@ -71,7 +71,7 @@ export default function Denah() {
           </div>
 
           {/* Masterplan Highlights */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="min-w-0 lg:col-span-5 space-y-6">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-emerald-800 bg-emerald-900/8 px-3.5 py-1.5 rounded-full">
               <Compass size={14} className="text-[#C58F4B]" />
               <span>Harmoni Tata Lahan</span>
@@ -152,9 +152,9 @@ export default function Denah() {
         </div>
 
         {/* Two Column Detailed Tables */}
-        <div className="grid lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           {/* Left: Land Use Breakdown with Visual Progress Bars */}
-          <div className="lg:col-span-5 bg-white rounded-3xl shadow-md border border-emerald-900/10 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="min-w-0 lg:col-span-5 bg-white rounded-3xl shadow-md border border-emerald-900/10 p-5 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex items-center gap-2.5 mb-2">
                 <Map size={20} className="text-emerald-800" />
@@ -174,11 +174,11 @@ export default function Denah() {
                       key={item.no}
                       className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-200/70"
                     >
-                      <div className="flex justify-between items-center text-sm mb-1.5">
-                        <span className="font-semibold text-[#0F291E]">
+                      <div className="flex justify-between items-start gap-2 text-xs sm:text-sm mb-1.5">
+                        <span className="font-semibold text-[#0F291E] leading-snug">
                           {item.no}. {item.name}
                         </span>
-                        <span className="font-bold text-emerald-900">
+                        <span className="font-bold text-emerald-900 shrink-0">
                           {item.percentage}%
                         </span>
                       </div>
@@ -213,7 +213,7 @@ export default function Denah() {
           </div>
 
           {/* Right: Block & Unit Distribution Table */}
-          <div className="lg:col-span-7 bg-white rounded-3xl shadow-md border border-emerald-900/10 p-6 sm:p-8 flex flex-col justify-between">
+          <div className="min-w-0 lg:col-span-7 bg-white rounded-3xl shadow-md border border-emerald-900/10 p-5 sm:p-8 flex flex-col justify-between">
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
                 <div>
